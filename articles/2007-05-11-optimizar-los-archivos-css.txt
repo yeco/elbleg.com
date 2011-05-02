@@ -1,0 +1,8 @@
+--- 
+title: Optimizar los archivos css
+date: 11/05/2007
+
+Interesante artículo que muestra como, utilizando la compresión gzip (un método de PHP), se puede comprimir (optimizar) el archivo CSS de un sitio para lograr una descarga más rápida.
+
+Leer artículo en: <a href="http://paulstamatiou.com/2007/03/18/how-to-optimize-your-css-even-more/">http://paulstamatiou.com</a>
+
