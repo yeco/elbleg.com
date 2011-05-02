@@ -6,7 +6,7 @@ date: 14/11/2009
 
 <p>Este snippet descarga y guarda en cache los bookmarks más recientes de una cuenta en específico en RSS desde el API de Delicious, luego los muestra en un UL de HTML.</p>
 <p><span id="more-254"></span></p>
-<pre class="php" name="code">
+<code class="php" name="code">
 
 function get_delicious()
 {
@@ -51,6 +51,6 @@ function get_delicious()
 
 // Mostralos
 get_delicious();
-</pre>
+</code>
 
 <p>Este snippet usa <a target="_blank" href="http://us.php.net/manual/en/ref.simplexml.php">SimpleXML</a>, propiedad que fué incluida en PHP5 para hacer la lectura de XML mucho más sencilla.</p>
