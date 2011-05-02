@@ -1,0 +1,29 @@
+title: Bot de Twitter en una línea de código
+author: YOUR_AUTHOR
+date: 02/05/2011
+
+
+
+<p>
+            No, no es broma. Hay quienes hacen ver como si hacer un bot para twitter fuera una gran haza&ntilde;a. Y en realidad es juego de ni&ntilde;os. Hace unos meses hice un <a href="http://www.elbleg.com/opensource/cliente-de-twitter-en-una-sola-linea.html">cliente para twitter en una l&iacute;nea</a>&#8230; ahora se me antoj&oacute; hacer un Bot en la misma cantidad de espacio.
+        </p>
+<p><span id="more-288"></span></p>
+<p>
+            Esto es posible hacerlo utilizando una &uacute;nica l&iacute;nea de BASH, el <a href="http://apiwiki.twitter.com/Streaming-API-Documentation">API de Streaming de twitter</a> y un poco de vagancia.
+        </p>
+<p>
+            Usando unos cuantos comandos encadenados este bot escucha concurrencias de la palabra &quot;bot&quot; en la twittersfera y sigue la persona que lo escribi&oacute;. Si si&#8230; totalmente in&uacute;til, pero a modo de ejemplo funciona.
+        </p>
+<p>        <script src="http://gist.github.com/266989.js?file=bot.sh"></script></p>
+<p>
+            Ac&aacute; hay una versi&oacute;n con algunos espacios extra para legibilidad (el script no funciona con ese espacio):</p>
+<p>        <script src="http://gist.github.com/266997.js?file=bot_explicado.sh"></script></p>
+<p>
+            <em>PD: S&iacute;, ya me d&iacute; cuenta que tiene 400 columnas.</em>
+        </p>
+<p>
+            <em>PD2: No, no deber&iacute;a de usarse en producci&oacute;n, tan solo es un ejemplo de lo sencillo que es hacer un Bot.</em>
+        </p>
+<p>
+            <em>PD3: Y no&#8230; esta vez no voy a hacer conclusi&oacute;n.</em>
+        </p>

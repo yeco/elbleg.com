@@ -1,0 +1,63 @@
+title: Snippet Favoritos recientes de Delicious con PHP
+author: YOUR_AUTHOR
+date: 02/05/2011
+
+
+
+<p>Este snippet descarga y guarda en cache los bookmarks más recientes de una cuenta en específico en RSS desde el API de Delicious, luego los muestra en un UL de HTML.</p>
+<p><span id="more-254"></span></p>
+<pre class="php" name="code">
+
+function get_delicious()
+{
+	$cache = dirname(__FILE__) . '/caches/delicious';
+	if(filemtime($cache) < (time() - 300))
+	{
+		@mkdir(dirname(__FILE__) . '/caches', 0777);
+		$url = 'https://api.del.icio.us/v1/posts/recent?count=10';
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+
+		// agregá delicious.com tu usuario y password en esta línea:
+		curl_setopt($ch, CURLOPT_USERPWD, 'usuario:password');
+		$data = curl_exec($ch);
+		curl_close($ch);
+		$cachefile = fopen($cache, 'wb');
+		fwrite($cachefile, $data);
+		fclose($cachefile);
+	}
+	else
+	{
+		$data = file_get_contents($cache);
+	}
+	$xml = simplexml_load_string($data);
+
+	$html = '
+<ul>';
+	foreach($xml as $item)
+	{
+		$html .= '
+<li><a href="' . $item['href'] . '">' . $item['description'] . '</a> ' . $item['extended'] . '</li>
+
+';
+	}
+	$html .= '
+<li><a href="http://delicious.com/yeco">Mis bookmarks recientes</a></li>
+
+';
+	$html .= '</ul>
+
+';
+	echo $html;
+}
+
+// Mostralos
+get_delicious();
+</pre>
+<p>Este snippet usa <a target="_blank" href="http://us.php.net/manual/en/ref.simplexml.php">SimpleXML</a>, propiedad que fué incluida en PHP5 para hacer la lectura de XML mucho más sencilla.</p>
