@@ -10,11 +10,11 @@ date: 14/11/2009
 
 function get_delicious()
 {
-	$cache = dirname(__FILE__) . &#x27;/caches/delicious&#x27;;
-	if(filemtime($cache) &lt; (time() - 300))
+	$cache = dirname(__FILE__) . '/caches/delicious';
+	if(filemtime($cache) < (time() - 300))
 	{
-		@mkdir(dirname(__FILE__) . &#x27;/caches&#x27;, 0777);
-		$url = &#x27;https://api.del.icio.us/v1/posts/recent?count=10&#x27;;
+		@mkdir(dirname(__FILE__) . '/caches', 0777);
+		$url = 'https://api.del.icio.us/v1/posts/recent?count=10';
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, 1);
@@ -24,11 +24,11 @@ function get_delicious()
 		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 
-		// agreg&aacute; delicious.com tu usuario y password en esta l&iacute;nea:
-		curl_setopt($ch, CURLOPT_USERPWD, &#x27;usuario:password&#x27;);
+		// agregá delicious.com tu usuario y password en esta línea:
+		curl_setopt($ch, CURLOPT_USERPWD, 'usuario:password');
 		$data = curl_exec($ch);
 		curl_close($ch);
-		$cachefile = fopen($cache, &#x27;wb&#x27;);
+		$cachefile = fopen($cache, 'wb');
 		fwrite($cachefile, $data);
 		fclose($cachefile);
 	}
@@ -38,17 +38,16 @@ function get_delicious()
 	}
 	$xml = simplexml_load_string($data);
 
-	$html = &#x27;&lt;ul&gt;&#x27;;
+	$html = '<ul>';
 	
 	foreach($xml as $item)
 	{
-		$html .= &#x27;&lt;li&gt;&lt;a href=&quot;&#x27; . $item[&#x27;href&#x27;] . &#x27;&quot;&gt;&#x27; . $item[&#x27;description&#x27;] . &#x27;&lt;/a&gt; &#x27; . $item[&#x27;extended&#x27;] . &#x27;&lt;/li&gt;&#x27;;
+		$html .= '<li><a href="' . $item['href'] . '">' . $item['description'] . '</a> ' . $item['extended'] . '</li>';
 	}
-	$html .= &#x27;&lt;li&gt;&lt;a href=&quot;http://delicious.com/yeco&quot;&gt;Mis bookmarks recientes&lt;/a&gt;&lt;/li&gt;&#x27;;
-	$html .= &#x27;&lt;/ul&gt;&#x27;;
+	$html .= '<li><a href="http://delicious.com/yeco">Mis bookmarks recientes</a></li>';
+	$html .= '</ul>';
 	echo $html;
 }
-
 // Mostralos
 get_delicious();
 </code>
