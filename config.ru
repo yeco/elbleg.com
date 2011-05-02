@@ -16,11 +16,10 @@ use Rack::Codehighlighter,
 :logging => true
 
 if ENV['RACK_ENV'] == 'production'
-	# use Rack::Rewrite do
-	#         r301 %r{.*}, 'http://elbleg.com$&', :if => Proc.new {|rack_env|
-	#         rack_env['SERVER_NAME'] != 'elbleg.com'
-	#     }
-	#   	end  
+	use Rack::Rewrite do
+		r301 '/actionscript/flash-video-calcular-el-tamano-del-buffer.html', '/2008/10/28/flash-video-calcular-el-tamao-del-buffer/'
+	end  
+	
 end
 
 if ENV['RACK_ENV'] == 'development'
