@@ -1,6 +1,6 @@
 --- 
 title: "Flash Video: Calcular el tama\xC3\xB1o del Buffer"
-date: 02/05/2011
+date: 28/10/2008
 
   
 <p>Muchas veces me han preguntado acerca de la forma correcta de calcular el tamaño de un buffer, y bien, me parece que ese sería un buen tema para desempolvar un poco el Blëg.</p>
