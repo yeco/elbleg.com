@@ -1,0 +1,13 @@
+---
+title: Primer reunión del Grupo de tecnologías móviles. Vas?
+date: 11/06/2010
+
+
+
+<p>El interés por el desarrollo para dispositivos móviles está creciendo bastante rápido en Costa Rica, buena prueba de ello es la creación del primer grupo de investigación de este tipo de tecnologías conocido en Latinoamérica (<em>que alguien me corrija si me equivoco</em>), iniciativa de un conjunto de profesionales y estudiantes en áreas que van desde diseño gráfico, propiedad intelectual y desde luego ingeniería en sistemas. </p>
+<p>Pues bien, el Grupo de Investigación de Tecnologías Móviles (<a href="http://twitter.com/MovilCR">@MovilCR</a> en twitter) ya echa a andar sus reuniones, la primera de estas será este 16 de Junio a las 7 de la noche en el Auditorio de la Universidad Latina. En esta reunión se pretende explicar un poco el fondo y objetivos del grupo, la forma en que se trabajaría con estudiantes interesados en el área y con profesionales que ya trabajan en ella. Esta primer reunión promete bastante contenido a modo de micro charlas de 5 minutos que mostrarían a grosso modo las temáticas a abarcar en el grupo.</p>
+<p>En fin. Si te interesa y estás en Costa Rica para la fecha, sos más que bienvenido. La información completa de la reunión la encontrás en su blog:<br />
+<a href="http://gitmocr.org/reunion/1">http://gitmocr.org/reunion/1</a></p>
+<p>[UPDATE 17-06-2010]<br />
+Las fotos, vídeos y presentaciones que se hicieron ese día están disponibles acá:<br />
+<a rel="colleague" href="http://gitmocr.org/reunion/resumen-de-la-primer-reunion">http://gitmocr.org/reunion/resumen-de-la-primer-reunion</a></p>

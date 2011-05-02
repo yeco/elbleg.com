@@ -1,0 +1,17 @@
+---
+title: Titanium en el Tech Camp Costa Rica
+date: 17/11/2009
+
+
+
+<p>Este lunes tuve el honor de conversar sobre el desarrollo de aplicaciones para dispositivos móviles usando tecnologías web. Fué impresionante la acogida que tuvo el tema y muy refrescante responder tantas preguntas. No tengo palabras para agradecer.<br />
+<span id="more-259"></span><br />
+Conversamos un poco sobre la arquitectura de la plataforma en sí. Del aporte en tiempo y know-how que provee y de lo rápido que crece gracias a la comunidad.</p>
+<p>Muchas gracias a todos los que asistieron (y no se durmieron). Sí alguno tiene dudas extras o alguna sugerencia para el futuro, soy todo oidos. </p>
+<p>También si alguien quiere mostrar esta presentación en su empresa o user group todos los contenidos son abiertos. Titanium tiene una iniciativa llamada App-U que apoya estos meet-ups enviando tshirts, stickers y otras chucherías para los asistentes así que si te interesa solo decime, no importa si no estás en Costa Rica o EEUU.</p>
+<p>Acá dejo la presentación y los archivos de ejemplo que vimos.</p>
+<div style="width:425px;text-align:left" id="__ss_2521296"><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=titanium-091117121020-phpapp01&#038;rel=0&#038;stripped_title=cero-a-app-en-una-hora" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=titanium-091117121020-phpapp01&#038;rel=0&#038;stripped_title=cero-a-app-en-una-hora" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object>
+<div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View more <a style="text-decoration:underline;" href="http://www.slideshare.net/">presentations</a> from <a style="text-decoration:underline;" href="http://www.slideshare.net/whoisyeco">Yëco</a>.</div>
+</div>
+<p><a href="http://www.elbleg.com/share/code.zip">Codigo de Ejemplo</a>.</p>
+<p>También les dejo la <a target="_blank" href="http://twitpic.com/q0nxa">foto de unos amigos.</a></p>

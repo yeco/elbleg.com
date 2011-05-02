@@ -1,0 +1,62 @@
+---
+title: Nombres de Funciones dinámicos con JavaScript
+date: 27/10/2009
+
+
+
+<p>Si te toca hacer aplicaciones un poco avanzadas con JavaScript, vas a toparte con un problema en un punto u otro donde vas a necesitar generar dinámicamente el nombre de una función que quieras llamar. Algo como el equivalente a <code>call_user_func()</code> de PHP.
+</p>
+<p><span id="more-236"></span></p>
+<p>Algo así es como podés hacerlo:</p>
+<pre class="js" name="code">// Definimos algunas variables
+var foo = &quot;Hola&quot;;
+var bar = &quot;Mundo&quot;;
+var nombre_funcion = &quot;decir_&quot; + foo + bar;
+
+/*  Dado que estamos generandolo din&aacute;micamente,
+* siempre hay que asegurarse de que la funci&oacute;n
+* exista en realidad. */
+
+if (typeof(window[nombre_funcion]) === &quot;function&quot;)
+{
+	window[nombre_funcion](&quot; Mundo!&quot;);
+}
+else
+{
+	throw(&quot;Error.  La funci&oacute;n &quot; + nombre_funcion + &quot; no existe...duh!&quot;);
+}
+
+function decir_holaMundo(la_palabra)
+{
+	alert(&quot;Hola &quot; + la_palabra);
+}
+
+// Browser va a alertar un trillad&iacute;simo &quot;Hola Mundo!&quot;</pre>
+<p>Cuando lo pensás un rato, tiene mucho sentido considerando que todos los objetos globales en JavasScript son en realidad propiedades del objeto <code>“window”</code>. Fijate en este ejemplo de manzanas y naranjas para entender un poco mejor el concepto.</p>
+<pre class="js" name="code">var foo = &quot;manzana&quot;;
+
+function foobar()
+{
+	var foo = &quot;naranja&quot;;
+	alert(window[&quot;foo&quot;]); // alerta &quot;manzana&quot;
+	alert(foo); // alert &quot;naranja&quot;
+	alert(window[&quot;foobar&quot;]); // alerta la funci&oacute;n foobar
+}
+
+foobar();
+</pre>
+<p>Acá hay otro ejemplo de cuando usar strings para llamar una función puede ser útil. Esta vez llamamos la propiedad de un objeto que hemos creado.</p>
+<pre class="js" name="code">function Persona()
+{
+	this.mensaje = &quot;Hola Mundo!&quot;;
+	this.decir_hola = function(a)
+	{
+		alert(this.mensaje);
+	}
+}
+
+var Yeco = new Persona();
+nombre_funcion = &quot;decir_hola&quot;;
+Yeco[nombre_funcion]();</pre>
+<p>Ves como es casi lo mismo que el método de arriba usando una función global?</p>
+<p>Espero que te sirva en algún momento.</p>

@@ -1,0 +1,256 @@
+---
+title: 10 buenas razones para usar Firebug
+date: 28/12/2009
+
+
+
+<p>
+            Firebug una de las herramientas que ha revolucionado la forma en que hacemos web hoy en día, su uso nos es indispensable para muchos y en lo personal es la herramienta que más utilizo para trabajar después de Textmate. </p>
+<p>La idea con este post, es recorrer diez de las mejores caracteristicas de Firebug. Así quienes no lo usan lo conocen y quienes lo conocen de repente puedan encontrarse con algo nuevo.
+        </p>
+<p><span id="more-271"></span></p>
+<h2>
+            1. Consola<br />
+        </h2>
+<p>
+            La primer cosa que vas a ver cuando abrís firebug va a ser el panel de consola . Después de verlo un momento podrías darte cuenta que es una versión alternativa de la consola de errores de Firefox que básicamente nos sirve para:
+        </p>
+<ul>
+<li>Registro de errores, advertencias y avisos
+            </li>
+<li>Habilidad para ejecutar código JavaScript
+            </li>
+</ul>
+<p>
+            Pero firebug lo extiende un poco más, así que en su consola podés hacer cosas mucho más complejas como:
+        </p>
+<ul>
+<li>Registrar errores de Javascript, CSS, XML, XMLHttpRequest (AJAX) y de Chrome (no el browser&#8230; Si no de funcionalidad interna de firefox)
+            </li>
+<li>Ejecutar JavaScript en la página web actual
+            </li>
+<li>Usar el objeto console para hacer output desde tu scripts
+            </li>
+</ul>
+<pre class="js" name="code">
+    &lt;html&gt;
+    &lt;head&gt;
+    &lt;script type="text/javascript"&gt;
+        console.time(1);
+        console.log('la seccion de scripts comenzo a ejecutarse');
+        console.warn('mensaje warning');
+        console.error('mensaje error');
+        console.info('mensaje info');
+        console.log(
+        'terminando la ejecucion del script\n',
+        'la ejecucion tardo:'
+        );
+        console.timeEnd(1);
+    &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;/html&gt;
+</pre>
+<p>
+            Fijate en el código arriba, tiene algunos ejemplos de uso del objeto console de firebug, imaginate que abrís que ejecutás ese HTML. Eso te va a mostrar algo como esto en la consola:
+        </p>
+<p>
+            <img <img src="http://elbleg.com/wp-content/themes/bleg/images/posts/firebug/console.png" width="663" height="271" alt="Console" />
+        </p>
+<h2>
+            2. HTML<br />
+        </h2>
+<p>
+            El segundo panel &#8211; y en el que creo que vas a pasar mucho tiempo &#8211; se divide en varias secciónes que vamos a revisar acá.
+        </p>
+<p>
+            <img <img src="http://elbleg.com/wp-content/themes/bleg/images/posts/firebug/html.png" width="664" height="272" alt="Html" />
+        </p>
+<ol>
+<li>Este botón es equivalente al &#8220;Inspect Element&#8221; que aparece en el menú contextual. Aparte de ser muy útil para seleccionar elementos en la página, también destaca el elemento seleccionado con un borde.
+            </li>
+<li>En esta sección tenemos la jerarquía del elemento que tenemos seleccionado y la habilidad de efectuar una serie de acciones en cada uno de los componentes de la jerarquía como:
+<ul class="">
+<li>Copiar el inner HTML
+                    </li>
+<li>Crear expresiones de XPath
+                    </li>
+<li>Adjuntarle un observador de eventos (y registrarlos en la consola)
+                    </li>
+<li>Borrar el elemento
+                    </li>
+<li>Editar el elemento y sus nodos hijos.
+                    </li>
+<li>Mover el elemento a la pestaña DOM para inspeccionarlo.
+                    </li>
+</ul>
+</li>
+<li>Es la ventana principal del panel; util para recorrer todo el html, hacer modificaciónes rápidas al código y encontrar errores (Como cerrar un div muy pronto). El menú contextual tiene las mismas opciones que la sección 2
+            </li>
+<li>En esta sección se muestran los estilos computados por el browser. La posibilidad de hacer modificaciones en tiempo real al estilo y la habilidad inspeccionar herencias me parecen que son las caracteristicas más importantes.
+            </li>
+<li>En esta sección podés examinar fácilmente el box model de un elemento: tamaño del contenido, padding, offsets, márgenes y bordes.
+            </li>
+<li style="list-style: none">
+                <img <img src="http://elbleg.com/wp-content/themes/bleg/images/posts/firebug/layout.png" width="655" height="245" alt="Layout" />
+            </li>
+<li>La sección DOM genera una lista con todos los métodos y propiedades del elemento seleccionado.
+            </li>
+<li style="list-style: none">
+                <img <img src="http://elbleg.com/wp-content/themes/bleg/images/posts/firebug/DOM.png" width="641" height="246" alt="DOM" />
+            </li>
+</ol>
+<h2>
+            3. CSS<br />
+        </h2>
+<p>
+            La principal diferencia entre este panel y el que está como sección dentro de la pestaña HTML es que acá podés trabajar con estilos que no han sido interpretados por el browser aún, o sea que no han sido computados. De nuevo voy a destacarte y numerar las secciones (y características esta vez). </p>
+<p><img <img src="http://elbleg.com/wp-content/themes/bleg/images/posts/firebug/css.png" width="700" height="273" alt="Css" />
+        </p>
+<ol>
+<li>Si la página en la que estás trabajando contiene múltiples hojas de estilo podés seleccionar solo la que te interese ver La región principal donde se muestra el código
+            </li>
+<li>Modifica fácilmente las propiedades del CSS.
+            </li>
+<li>Podés deshabilitar el CSS desde ahí.
+            </li>
+</ol>
+<h2>
+            4. Script<br />
+        </h2>
+<p>
+            A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La mayor parte del tiempo te vas a ver trabajando con la consola; Pero en condiciones extremas vas a tener que pasarte al script panel. Dadas esas condiciones extremas (que ocurren comúnmente), te presento este panel, así te empezás a familiarizar con él.
+        </p>
+<p>
+            <img <img src="http://elbleg.com/wp-content/themes/bleg/images/posts/firebug/script.png" width="699" height="272" alt="Script" />
+        </p>
+<ol>
+<li>Un Dropdown para escoger el script que querés trabajar.
+            </li>
+<li>Funciones para Debugging: <em>continue, step in, step over y step out</em>. Estas se habilitan solamente cuando el código en ejecución llega a un breakpoint.
+            </li>
+<li>Sección principal. Acá colocás (y quitás) los breakpoints, también sirve para inspeccionar el código Javascript.
+            </li>
+<li>Similar al panel DOM panel, la sección Watch muestra los métodos y parametros para el código que se está debuggeando.
+            </li>
+<li>Muestra el stack de funciones en tiempo real.
+            </li>
+<li>Lista los breakpoints que se encuentran activos con un link a la línea donde se encuentra. Desde acá solo podés eliminarlos.
+            </li>
+</ol>
+<h2>
+            5. DOM<br />
+        </h2>
+<p>
+            Es lo mismo que HTML-&gt;DOM. Dado que nada cambia de lo que te mencioné anteriormente, pasemos a la siguiente sección.
+        </p>
+<h2>
+            6. Net<br />
+        </h2>
+<p>
+            Curioso de cuanto tiempo tarda la página en cargar? O querés saber cual pedido tarda más tiempo en completarse? Afortunadamente, todo eso puede hacerse en el panel Net.
+        </p>
+<p>
+            <img <img src="http://elbleg.com/wp-content/themes/bleg/images/posts/firebug/net.png" width="790" height="270" alt="Net" />
+        </p>
+<ol>
+<li>Los pedidos pueden filtrarse de acuerdo a su tipo.
+            </li>
+<li>Todo pedido es mostrado en esta sección. Al final de la lista vemos un sumario que contiene: Numero de pedidos, tamaño, cuanto fué guardado en caché y el tiempo total que tomó completarlos.
+            </li>
+<li>Revela más detalles como: HTTP headers, respuesta y cache.
+            </li>
+</ol>
+<h3>
+            Pruebas de desempeño (Performance Testing)<br />
+        </h3>
+<p>
+            Quedés probar el desempeño de una función o un bucle específico? Podés usar el &#8220;timer&#8221; de Firebug.
+        </p>
+<pre class="js" name="code">
+    function medirTiempo(){
+        console.time("MiTimer");
+        for(x=5000; x &gt; 0; x--){}
+        console.timeEnd("MiTimer");
+    }
+</pre>
+<p>
+            Tres pasos. Empezá por llamar &#8220;console.time&#8221; y le pasás un único key. Luego de esto ponés el código que necesitás probar. Finalmente, llamás “console.timeEnd”, y de nuevo como único parámetro, le pasás el key que utilizaste anteriormente. Voilá.
+        </p>
+<h2>
+            7. Reference<br />
+        </h2>
+<p>
+            <img <img src="http://elbleg.com/wp-content/themes/bleg/images/posts/firebug/reference.png" width="676" height="270" alt="Reference" />
+        </p>
+<p>
+            Este es un panel adicional, un add-on creado por CodeBurner. Como el nombre lo indica, con este panel tenés acceso rápido a las referencias de HTML y CSS. Me parece que el panel se explica solito.
+        </p>
+<h2>
+            8. PixelPerfect<br />
+        </h2>
+<p>
+            <img <img src="http://elbleg.com/wp-content/themes/bleg/images/posts/firebug/pixelperfect.png" width="672" height="269" alt="Pixelperfect" />
+        </p>
+<p>
+            Si has hecho slicing de un PSD, ya sabés el tiempo que nos quita en cada elemento de la composición. Y es ahí donde PixelPerfect demuestra su poder. Este add-on te ayudará bastante en esa tediosa tarea mostrandote cómo deben ir colocados los elementos con la ayuda de imagenes superpuestas al html.
+        </p>
+<ol>
+<li>Con este botón podés agregar varias imágenes superpuestas para la página actual.
+            </li>
+<li>Lista de superposiciones, desde acá podés agregar o quitar las imágenes.
+            </li>
+<li>Configuración de las superposiciones.
+            </li>
+</ol>
+<h2>
+            9. YSlow<br />
+        </h2>
+<p>
+            Un buen add-on creado por Yahoo!. Este te sugiere mejoras basado en una serie de test de velocidad que hace. Con YSlow, podés obtener el grado de desempeño de un website. Podés identificar fácilmente los puntos que pueden ser mejorados, además de una serie de recomendaciones para hacerlo.
+        </p>
+<p>
+            <img <img src="http://elbleg.com/wp-content/themes/bleg/images/posts/firebug/yslow1.png" width="661" height="319" alt="Yslow1" />
+        </p>
+<p>
+            Aparte de las estadisticas que te muestra YSlow, te recomiendo JSLint.com para evaluar el JavaScript y Smush.it para las imágenes.
+        </p>
+<p>
+            <img <img src="http://elbleg.com/wp-content/themes/bleg/images/posts/firebug/yslow2.png" width="659" height="453" alt="Yslow2" />
+        </p>
+<h2>
+            10. FirePHP<br />
+        </h2>
+<p>
+            Y por último, pero no menos importante, FirePHP. Con este add-on, podés enviar información (warnings, errors, logging, info) transparentemente a la consola desde tu código PHP. Un ejemplo sería:
+        </p>
+<pre class="php" name="code">
+
+            &lt;?php
+                FB::log('Log message');
+                FB::info('Info message');
+                FB::warn('Warn message');
+                FB::error('Error message');
+            ?&gt;
+</pre>
+<h2>
+            Conclusión<br />
+        </h2>
+<p>
+            Y dale con las conclusiones&#8230; Meh&#8230; Bueno ok&#8230; Va.
+        </p>
+<p>
+            La idea con esta pequeña lista de paneles/add-on es que se te haga la vida como developer un poco más fácil &#8212; tal como me lo ha hecho a mi.
+ </p>
+<p>Al final, los bugs siempre pasan, lo realmente malo es no estar preparado para resolverlos.</p>
+<p> Acá la lista de links para los add-ons:
+        </p>
+<p>
+            <a href="https://addons.mozilla.org/ro/firefox/addon/1843" rel="external">Firebug</a>,<br />
+            <a href="https://addons.mozilla.org/ro/firefox/addon/10273" rel="external">CodeBurner</a>,<br />
+            <a href="https://addons.mozilla.org/ro/firefox/addon/7943" rel="external">PixelPerfect</a>,<br />
+            <a href="https://addons.mozilla.org/ro/firefox/addon/5369" rel="external">YSlow</a>,<br />
+            <a href="http://www.firephp.org/" rel="external">FirePHP</a>
+        </p>
+<p>
+            Que te sirva.
+        </p>

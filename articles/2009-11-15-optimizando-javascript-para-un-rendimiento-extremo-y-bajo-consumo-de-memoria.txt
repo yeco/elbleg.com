@@ -1,0 +1,93 @@
+---
+title: Optimizando JavaScript para un rendimiento extremo y bajo consumo de memoria
+date: 15/11/2009
+
+
+
+<p>
+			En mis muy esporádicos ratos libres estoy haciendo un pequeño juego en JavaScript y he tenido que tomar algunas medidas para agilizar el código. La idea en este post es mostrar algunos trucos que he aprendido en el proceso, algunos no los he visto mencionados en otras partes, así que no está de más compartirlos.
+		</p>
+<p>
+			Muchos de los tips de optimización para JavaScript involucran cosas que se ven más típicamente en otros sitios, como por ejemplo minimizar la cantidad de modificaciones al DOM. Pero en este caso es un poco diferente, ya que era el script por sí mismo era quien debía correr más rápido &#8211; No trabaja con el DOM ni nada, solo procesa muchos datos.
+		</p>
+<p><span id="more-244"></span></p>
+<h2>
+			Encontrando la raíz del problema<br />
+		</h2>
+<p>
+			Antes de iniciar cualquier optimización, el código debe ser perfilado para saber qué parte es la que está corriendo despacio. La mejor herramienta para lograr esto, es definitivamente el Profiler de Firebug. Sin este probablemente hubiese tenido muchas más dificultades para encontrar problemas y probar cómo las cosas que cambiaba afectaban la velocidad.
+		</p>
+<p>
+			El Profiler lo encontrás en la consola del Firebug. Solo dale clic en el botón ‘profiler’ una vez para iniciar el <em>perfilamiento (si es que existe la palabra)</em> y clicás de nuevo para detenerlo. Después de detenerlo vas a recibir una lista informativa de las funciones que han sido llamadas y cuanto tiempo tomó cada una en ejecutarse.
+		</p>
+<h3>
+			Problema 1: Iteraciones, cantidad de datos<br />
+		</h3>
+<p>
+			El primer problema que me abofeteó fué la enorme cantidad de datos que se debían de guardar. Un mapa de 128&#215;128 requiere 16,384 iteraciones para ser completamente procesado. A primer vista no parece tanto, pero solamente iterar la data, sin hacer nada más, causaba un golpe mucho mayor del que pasaría en muchos otros lenguajes. Por extraño que pueda parecer, podés usar un do-while invertido para acelerar las iteraciones, o sea en lugar de usar un ciclo con for y contar sumando, usás un ciclo con do-while y contás restando. </p>
+<pre class="js" name="code">
+			var i = data.length;
+			do {
+			 /* algo que hacer */
+			} while(--i);
+</pre>
+<p>Por qué es más rápido? Aparentemente el simple hecho de remover la condicion usada para comprobar cuando el loop termine hace gran parte de la diferencia. Hacer -i en vez de i- también ayuda un poco. </p>
+<p>El problema con este enfoque es que no siempre es aplicable.</p>
+<h3>Problema 2: Llamar funciones</h3>
+<p>Fué curioso encontrar que el simple hecho de llamar una función agrega un overhead significativo. Así que llamar una función dentro de uno de esos ciclos grandes en los for puede agregar mucho tiempo de procesamiento.</p>
+<p>Como resolverlo? Colocando el código de la función dentro del loop.</p>
+<p>Sí, raro. Pero si mueves el código de la función y lo colocas dentro del loop en lugar de llamar la función vas a tener una mejora significativa.  Tiene como gran desventaja que reduce la legibilidad del código, además de que le abre las puertas a la duplicación de código si la función se usa en más de un lugar.</p>
+<p>Por raro que sea, esto fué uno de los propulsores más grandes de performance, que en este caso particular, era más importante que un código legible.</p>
+<h3>Problema 3: Limitaciones de la memoria</h3>
+<p>Dado al bajo monto de memoria disponible en el dispositivo al que va dirigido el juego. La aplicación se quedó sin memoria en varias ocasiones.</p>
+<p>Primero, el tamaño del mapa era de 300&#215;300, lo que hacía que el teléfono se quedara sin memoria casi de inmediato. Para esto no hubo más remedio que reducir el tamaño a un 128&#215;128. Usar 300&#215;300 pudo también tener otras repercusiones con el performance, porque la cantidad de data hubiese sido mucho mayor para dibujarlo.</p>
+<p>Segundo, cuando implementé la funcionalidad para cargar y salvar el juego, el app de nuevo se quedaba sin memoria. Esto probablemente causado porque el data del mapa era serializado a JSON.</p>
+<p>La idea que resolvió esto: Cortar el data en pedazitos pequeños.</p>
+<p>Entonces, en lugar de guardar todo el array del mapa de 128&#215;128 de una sola vez, el código lo hace en 8 partes. De este modo el tamaño del JSON serializado se mantiene pequeño y la aplicación no se queda sin memoria.</p>
+<p>Lo mismo se hace cuando carga, Como el JSON es guardado en 8 bloques separados, al cargar se meten dentro del array uno por uno.</p>
+<h3>Más optimizaciones: Dividir y Flood numbers</h3>
+<p>Como parte de la lógica del juego también eran necesario dividir algunos numeros y asegurarme de que los valores eran números enteros.</p>
+<p>Típicamente esto requeriría dividir primero y luego aplicar Math.floor. Como mencioné hace un rato. Llamar funciones puede salir caro.</p>
+<p>Hay un truco ‘limpio’ para esto. Y limpio entre comillas porque para algunas personas puede ser confuso si no están familiarizadas con la sintáxis, y esto, pues hace el código un poco dificil de leer.</p>
+<p>El truco consiste en usar un bit-shift (no conozco el término en español&#8230;):</p>
+<pre class="js" name="code">
+				var foo = 10;
+				//la mayoría de veces, esto es lo mismo que hacer Math.floor(foo / 4)
+				var result = foo >> 2;
+</pre>
+<p>Hacer  <code> >> 2</code> es, como menciona el comentario, practicamente lo mismo que dividir por 4 y despues llamar un <code>Math.floor</code>. Pero en lugar de dos operaciones, tenés solamente una, por lo tanto puede ser un poco más rápido.</p>
+<p>Si no entendés de matemática binaria los bitshifts pueden ser un poco enredados. En palabras simples, si hacés  <code>>></code> con 1, es lo mismo que dividir por 2, 2 es dividir entre 4, 3 es dividir entre 8, y 4 es dividir entre 16 y ahí sigue la idea&#8230;</p>
+<p>Como es costumbre, <a target="_blank" href="http://en.wikipedia.org/wiki/Bit_shift#Bit_shifts">hay un buen articulo en Wikipedia sobre esto</a>, el cual es un buen recurso si querés leer más información al respecto.</p>
+<h3>Más?: Mete el código en funciones anónimas</h3>
+<p>Esta es una sugerencia vieja vieja vieja, pero buena buena buena&#8230; Mete el código en funciones anónimas incluso si no son o usan globales.</p>
+<p>Por alguna razón que no podría explicar apropiadamente, esto afecta también la velocidad de ejecución de los scripts.</p>
+<p>Así que cuando sea que tengas código en JS en un archivo, recuerda envolverla en una función anónima auto ejecutable como esta:</p>
+<pre class="js" name="code">
+(function(window) {
+  /* todo el código va acá!!*/
+})(window);
+			</pre>
+<p>También podés hacer que la función reciba el objeto window como un argumento para una posible pequeña mejora.</p>
+<h3>Por último: Reducí el scope</h3>
+<p>Esta amarra con la anterior, agregá variables locales dentro de la función anónima para funciones que se usan normalmente, como Math.round or Math.random</p>
+<pre class="js" name="code">
+(function(window) {
+  var round = Math.round;
+  var random = Math.random;
+  /* todo el código va acá!!*/
+})(window);
+</pre>
+<h3>Conclusión</h3>
+<p>Solo porque ya se me hizo costumbre hacer conclusión&#8230;. En fín. La idea detrás de todo esto es mostrar que hay formas de mejorar la velocidad del JavaScript, incluso cuando no tenga nada que ver con el DOM, pero si de igual modo trabajas con el, no está de más agregar unos tips a lo que ya conoces.</p>
+<p>Agregando una cosa más a lo anterior. Hay una cosa más que intenté: Probar si había alguna diferencia entre llamar una función objeto vs una función instancia:</p>
+<pre class="js" name="code">
+				var x = new Foo();
+				x.someFunc();
+				//or
+				bar.someFunc();
+</pre>
+<p>Yo no ví diferencia alguna, pero si estás usando las clasicas intancias de POO en lugar de funciones estáticas. Puede que te sirva.</p>
+<p>Solo recordá que debes perfilar el código siempre antes y después de una optimización. Para ver donde están las partes que realmente necesitan optimizarse y su hubieron mejoras después de algún cambio.</p>
+<p>También considerá que muchas optimizaciones pueden hacer que el código sea dificil de mantener. Así que puedes poner en una balanza que tanto necesitas mejorar el performance. Si no es tanto, a veces es mejor no hacerlo.</p>
+<p>Espero que te sirva de algo.</p>
+<p><a href="http://codeutopia.net/blog/2009/04/30/optimizing-javascript-for-extreme-performance-and-low-memory-consumption/">Fuente</a></p>
