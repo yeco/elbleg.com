@@ -90,7 +90,7 @@ Podés encontrar algo exagerado poner solo un método con unas cuantas lineas de
 
 	}
 
-init();
+	init();
 </code>
 <p>Podrías mejorarlo más, por ejemplo poniendo este codigo en una clase separada en lugar del frame 1 y encapsulando el detector de ancho de banda y el calculador de buffer en una clase de decoración para el componente FLVPlayback y así cada vez que se crea una instancia de FLVPlayback el tamaño del buffer se configura de forma automática, sería un buen addon, pero aún más importante es asegurarse de que el flv fué encodeado con el bitrate correcto, y el intervalo entre keyframes adecuado.</p>
 <p>Recordá que en DevNet siempre hay textos interesantes con respecto al tema, además de buenas practicas trabajando con video.</p>
