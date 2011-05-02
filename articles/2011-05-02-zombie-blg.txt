@@ -1,0 +1,5 @@
+--- 
+title: "Zombie Bl\xC3\xABg"
+date: 02/05/2011
+
+Estamos pasando por una serie de cambios a nivel de core engine y Front end así que vas a encontrar el Blëg un poco distinto y con una que otra pulga temporal.  Luego doy mayores detalles de por qué y cómo.
