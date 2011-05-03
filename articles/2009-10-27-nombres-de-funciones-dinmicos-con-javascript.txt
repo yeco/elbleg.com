@@ -3,52 +3,57 @@ title: Nombres de Funciones dinámicos con JavaScript
 date: 27/10/2009
 
 
+Si te toca hacer aplicaciones un poco avanzadas con JavaScript, vas a toparte con un problema en un punto u otro donde vas a necesitar generar dinámicamente el nombre de una función que quieras llamar. Algo como el equivalente a `call_user_func()` de PHP. 
 
-<p>Si te toca hacer aplicaciones un poco avanzadas con JavaScript, vas a toparte con un problema en un punto u otro donde vas a necesitar generar dinámicamente el nombre de una función que quieras llamar. Algo como el equivalente a <code>call_user_func()</code> de PHP.
-</p>
-<p><span id="more-236"></span></p>
-<p>Algo así es como podés hacerlo:</p>
+<span id="more-236"></span>
+
+Algo así es como podés hacerlo:
+
 <pre class="js" name="code">// Definimos algunas variables
-var foo = &quot;Hola&quot;;
-var bar = &quot;Mundo&quot;;
-var nombre_funcion = &quot;decir_&quot; + foo + bar;
+var foo = "Hola";
+var bar = "Mundo";
+var nombre_funcion = "decir_" + foo + bar;
 
 /*  Dado que estamos generandolo din&aacute;micamente,
 * siempre hay que asegurarse de que la funci&oacute;n
 * exista en realidad. */
 
-if (typeof(window[nombre_funcion]) === &quot;function&quot;)
+if (typeof(window[nombre_funcion]) === "function")
 {
-	window[nombre_funcion](&quot; Mundo!&quot;);
+	window[nombre_funcion](" Mundo!");
 }
 else
 {
-	throw(&quot;Error.  La funci&oacute;n &quot; + nombre_funcion + &quot; no existe...duh!&quot;);
+	throw("Error.  La funci&oacute;n " + nombre_funcion + " no existe...duh!");
 }
 
 function decir_holaMundo(la_palabra)
 {
-	alert(&quot;Hola &quot; + la_palabra);
+	alert("Hola " + la_palabra);
 }
 
-// Browser va a alertar un trillad&iacute;simo &quot;Hola Mundo!&quot;</pre>
-<p>Cuando lo pensás un rato, tiene mucho sentido considerando que todos los objetos globales en JavasScript son en realidad propiedades del objeto <code>“window”</code>. Fijate en este ejemplo de manzanas y naranjas para entender un poco mejor el concepto.</p>
-<pre class="js" name="code">var foo = &quot;manzana&quot;;
+// Browser va a alertar un trillad&iacute;simo "Hola Mundo!"</pre>
+
+Cuando lo pensás un rato, tiene mucho sentido considerando que todos los objetos globales en JavasScript son en realidad propiedades del objeto `“window”`. Fijate en este ejemplo de manzanas y naranjas para entender un poco mejor el concepto.
+
+<pre class="js" name="code">var foo = "manzana";
 
 function foobar()
 {
-	var foo = &quot;naranja&quot;;
-	alert(window[&quot;foo&quot;]); // alerta &quot;manzana&quot;
-	alert(foo); // alert &quot;naranja&quot;
-	alert(window[&quot;foobar&quot;]); // alerta la funci&oacute;n foobar
+	var foo = "naranja";
+	alert(window["foo"]); // alerta "manzana"
+	alert(foo); // alert "naranja"
+	alert(window["foobar"]); // alerta la funci&oacute;n foobar
 }
 
 foobar();
 </pre>
-<p>Acá hay otro ejemplo de cuando usar strings para llamar una función puede ser útil. Esta vez llamamos la propiedad de un objeto que hemos creado.</p>
+
+Acá hay otro ejemplo de cuando usar strings para llamar una función puede ser útil. Esta vez llamamos la propiedad de un objeto que hemos creado.
+
 <pre class="js" name="code">function Persona()
 {
-	this.mensaje = &quot;Hola Mundo!&quot;;
+	this.mensaje = "Hola Mundo!";
 	this.decir_hola = function(a)
 	{
 		alert(this.mensaje);
@@ -56,7 +61,9 @@ foobar();
 }
 
 var Yeco = new Persona();
-nombre_funcion = &quot;decir_hola&quot;;
+nombre_funcion = "decir_hola";
 Yeco[nombre_funcion]();</pre>
-<p>Ves como es casi lo mismo que el método de arriba usando una función global?</p>
-<p>Espero que te sirva en algún momento.</p>
+
+Ves como es casi lo mismo que el método de arriba usando una función global?
+
+Espero que te sirva en algún momento.

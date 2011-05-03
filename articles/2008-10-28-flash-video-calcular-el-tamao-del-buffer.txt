@@ -3,28 +3,36 @@ title: "Flash Video: Calcular el tama\xC3\xB1o del Buffer"
 date: 28/10/2008
 
   
-<p>Muchas veces me han preguntado acerca de la forma correcta de calcular el tamaño de un buffer, y bien, me parece que ese sería un buen tema para desempolvar un poco el Blëg.</p>
-<p>Si querés mostrar flash video, tenés 3 opciones primarias:</p>
-<ol>
-<li>Ignorar el ancho de banda del usuario y solo mostrar una versión del archivo usando un buffer estimado.</li>
-<li>Mostrar diferentes versiones del mismo archivo (por ejemplo alta y baja resolución) dependiendo del ancho de banda del usuario y usando un buffer con un tamaño estimado o bien, calculando el bufer adecuado.</li>
-<li>Mostrar una versión encodeada razonablemente y usar un buffer dependiendo de la conexión del usuario</li>
-</ol>
-<p></p>
-<p>Tomá en cuenta que me refiero a progressive download y no al Streaming (que es la mejor opción en caso de videos grandes), tampoco me refiero al video incrustado en la linea de tiempo de flash.</p>
-<p>Volviendo a lo anterior, basandonos en como y donde querés mostrar el video la opción 1 solo es recomendable si el video está muy bien codificado y si conoces perfectamente a quién irá dirigido, la opción 2 es la más laboriosa (tener que crear las diferentes versiones…) pero funciona si puedes vivir con el hecho de que quienes tengan un menor ancho de banda van a ver una versión de mala calidad y pobre del video. La opción 3, ronda en medio de las opciones 1 y 2, además de que es algo que podés hacer siempre sin demasiado esfuerzo.</p>
-<h2>Muy bonito, pero cómo calculo el buffer?</h2>
-<p>Necesitás conocer tres valores:</p>
-<ol>
-<li>El largo de tu flv en segundos</li>
-<li>El bitrate de tu flv en kilobits por segundo</li>
-<li>El ancho de banda del usuario en kilobits por segundo</li>
-</ol>
-<p>Si conocés estos valores podés calcular el tamaño del buffer con una formula bastante simple. Que de donde sacás esos numeritos? El primero (el largo del flv) puede encontrarse en el<br>
-metadata del flv propiamente y se incluye cuando se codifica el video, el segundo (el bitrate) se encuentra también en el bendito metadata. El tercero, como era de esperar, es más complicado de conseguir y no hay una propiedad o metodo en flash que nos dé el ancho de banda del usuario, entonces hay que conseguir ese valor mediante un chequeo la primera vez que el usuario descarga la aplicación, por ejemplo.</p>
-<p>La formula es la misma que podés encontar en el <a target="_blank" href="http://www.adobe.com/devnet/flash/video.html">DevNet de Adobe</a> con la principal diferencia de que aquí ya está encapsulada en una clase.<br>
-Podés encontrar algo exagerado poner solo un método con unas cuantas lineas de código en su propia clase pero es conveniente si lo deseas reutilizar en otros proyectos, y en lo personal, prefiero tener cada cosa con su cosa. Además podrías agregarle otros métodos que sean útiles para el manejo de videos y cambiarle el nombre a “VideoUtil” o algo por el estilo.</p>
-<p>Acá está el BufferCalculator.as:</p>
+Muchas veces me han preguntado acerca de la forma correcta de calcular el tamaño de un buffer, y bien, me parece que ese sería un buen tema para desempolvar un poco el Blëg.
+
+Si querés mostrar flash video, tenés 3 opciones primarias:
+
+1.  Ignorar el ancho de banda del usuario y solo mostrar una versión del archivo usando un buffer estimado.
+2.  Mostrar diferentes versiones del mismo archivo (por ejemplo alta y baja resolución) dependiendo del ancho de banda del usuario y usando un buffer con un tamaño estimado o bien, calculando el bufer adecuado.
+3.  Mostrar una versión encodeada razonablemente y usar un buffer dependiendo de la conexión del usuario
+
+
+
+Tomá en cuenta que me refiero a progressive download y no al Streaming (que es la mejor opción en caso de videos grandes), tampoco me refiero al video incrustado en la linea de tiempo de flash.
+
+Volviendo a lo anterior, basandonos en como y donde querés mostrar el video la opción 1 solo es recomendable si el video está muy bien codificado y si conoces perfectamente a quién irá dirigido, la opción 2 es la más laboriosa (tener que crear las diferentes versiones…) pero funciona si puedes vivir con el hecho de que quienes tengan un menor ancho de banda van a ver una versión de mala calidad y pobre del video. La opción 3, ronda en medio de las opciones 1 y 2, además de que es algo que podés hacer siempre sin demasiado esfuerzo.
+
+## Muy bonito, pero cómo calculo el buffer?
+
+Necesitás conocer tres valores:
+
+1.  El largo de tu flv en segundos
+2.  El bitrate de tu flv en kilobits por segundo
+3.  El ancho de banda del usuario en kilobits por segundo
+
+Si conocés estos valores podés calcular el tamaño del buffer con una formula bastante simple. Que de donde sacás esos numeritos? El primero (el largo del flv) puede encontrarse en el metadata del flv propiamente y se incluye cuando se codifica el video, el segundo (el bitrate) se encuentra también en el bendito metadata. El tercero, como era de esperar, es más complicado de conseguir y no hay una propiedad o metodo en flash que nos dé el ancho de banda del usuario, entonces hay que conseguir ese valor mediante un chequeo la primera vez que el usuario descarga la aplicación, por ejemplo.
+
+La formula es la misma que podés encontar en el <a target="_blank" href="http://www.adobe.com/devnet/flash/video.html">DevNet de Adobe</a> con la principal diferencia de que aquí ya está encapsulada en una clase.  
+
+Podés encontrar algo exagerado poner solo un método con unas cuantas lineas de código en su propia clase pero es conveniente si lo deseas reutilizar en otros proyectos, y en lo personal, prefiero tener cada cosa con su cosa. Además podrías agregarle otros métodos que sean útiles para el manejo de videos y cambiarle el nombre a “VideoUtil” o algo por el estilo.
+
+Acá está el BufferCalculator.as:
+
 <code class="javascript" name="code">
 	class cr.yeco.video.BufferCalculator {
 
@@ -55,10 +63,13 @@ Podés encontrar algo exagerado poner solo un método con unas cuantas lineas de
 		}
 
 	}
-</code>
-<h2>Ya tengo la clase, pero con qué la lleno?</h2>
-<p>Bien, la próxima parte es como obtener los valores con los que vas a correr el método calculate(). Si no tenés tu forma de calcular el ancho de banda podés usar esta clase (<a target="_blank" href="http://www.mediafire.com/file/0swysjgymjz/BandwidthDetector.as">descargar</a>), en el archivo que se descarga al final del post hay un ejemplo comentado sobre cómo usar la clase.</p>
-<p>Básicamente carga un archivo que vos especificás por unos cuantos segundos y luego calcula y te dice cual es el ancho de banda. Lo bueno es que solo es necesario correrlo una vez (por ejemplo al iniciar la aplicación). La clase guarda los valores en objetos compartidos y corre nuevamente cuando el tiempo ha expirado. Desde luego que no es un método a prueba de balas: el ancho de banda del usuario puede variar mientras usa la aplicación etc. Pero es mucho mejor que nada.  Lo siguiente es un ejemplo de como usar las dos clases juntas con el componente FLVPlayback (el código puesto en el frame 1):</p>
+</code> 
+## Ya tengo la clase, pero con qué la lleno?
+
+Bien, la próxima parte es como obtener los valores con los que vas a correr el método calculate(). Si no tenés tu forma de calcular el ancho de banda podés usar esta clase (<a target="_blank" href="http://www.mediafire.com/file/0swysjgymjz/BandwidthDetector.as">descargar</a>), en el archivo que se descarga al final del post hay un ejemplo comentado sobre cómo usar la clase.
+
+Básicamente carga un archivo que vos especificás por unos cuantos segundos y luego calcula y te dice cual es el ancho de banda. Lo bueno es que solo es necesario correrlo una vez (por ejemplo al iniciar la aplicación). La clase guarda los valores en objetos compartidos y corre nuevamente cuando el tiempo ha expirado. Desde luego que no es un método a prueba de balas: el ancho de banda del usuario puede variar mientras usa la aplicación etc. Pero es mucho mejor que nada. Lo siguiente es un ejemplo de como usar las dos clases juntas con el componente FLVPlayback (el código puesto en el frame 1):
+
 <code class="javascript" name="code">
 	Stage.scaleMode= "noScale";
 
@@ -91,8 +102,10 @@ Podés encontrar algo exagerado poner solo un método con unas cuantas lineas de
 	}
 
 	init();
-</code>
-<p>Podrías mejorarlo más, por ejemplo poniendo este codigo en una clase separada en lugar del frame 1 y encapsulando el detector de ancho de banda y el calculador de buffer en una clase de decoración para el componente FLVPlayback y así cada vez que se crea una instancia de FLVPlayback el tamaño del buffer se configura de forma automática, sería un buen addon, pero aún más importante es asegurarse de que el flv fué encodeado con el bitrate correcto, y el intervalo entre keyframes adecuado.</p>
-<p>Recordá que en DevNet siempre hay textos interesantes con respecto al tema, además de buenas practicas trabajando con video.</p>
-<p>Acá podés <a target="_blank" href="http://www.mediafire.com/file/quymdgnzylj/BufferSize.zip">descargar todos los archivos</a>.</p>
+</code> 
+Podrías mejorarlo más, por ejemplo poniendo este codigo en una clase separada en lugar del frame 1 y encapsulando el detector de ancho de banda y el calculador de buffer en una clase de decoración para el componente FLVPlayback y así cada vez que se crea una instancia de FLVPlayback el tamaño del buffer se configura de forma automática, sería un buen addon, pero aún más importante es asegurarse de que el flv fué encodeado con el bitrate correcto, y el intervalo entre keyframes adecuado.
+
+Recordá que en DevNet siempre hay textos interesantes con respecto al tema, además de buenas practicas trabajando con video.
+
+Acá podés <a target="_blank" href="http://www.mediafire.com/file/quymdgnzylj/BufferSize.zip">descargar todos los archivos</a>.
  
