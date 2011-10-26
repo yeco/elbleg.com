@@ -1,11 +1,23 @@
-<h1><%= @path %></h1>
-<ul>
-  <% if archives.length > 0 %>
-    <% for entry in archives %>
-      <li>
-        <a href="<%= entry.path %>"><%= entry.title %></a>
-      </li>
-    <% end %>
-  <% end %>
-</ul>
+ 
+
+<article class="post">
+  <header>
+    <h1>Archivo</h1>
+  </header>
+
+  <section class="content">
+	<ul>
+	  <% if archives.length > 0 %>
+	    <% for entry in archives %>
+	      <li>
+	        <a href="<%= entry.path %>"><%= entry.title %></a>
+	      </li>
+	    <% end %>
+	  <% end %>
+	</ul>
+  </section>
+
+   
+  </section>
+</article>
 

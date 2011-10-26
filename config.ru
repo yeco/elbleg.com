@@ -7,7 +7,7 @@ require 'rack/codehighlighter'
 require 'rack/rewrite'
 
 # Rack config
-use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico'], :root => 'public'
+use Rack::Static, :urls => ['/css', '/javascript', '/img', '/favicon.ico'], :root => 'public'
 use Rack::CommonLogger
 use Rack::Codehighlighter, 
 :coderay, :markdown => true,
@@ -52,15 +52,23 @@ toto = Toto::Server.new do
   # set :disqus,    false                                     # disqus id, or false
   # set :summary,   :max => 150, :delim => /~/                # length of article summary and delimiter
   # set :ext,       'txt'                                     # file extension for articles
-  # set :cache,      28800                                    # cache duration, in seconds
+  set :cache,      28800                                    # cache duration, in seconds
 
   set :author, "Yëco"
   set :date, lambda {|now| now.strftime("%d %b %Y") }
   set :summary, :max => 1000, :delim => /~\n/
   set :disqus, 'elbleg'
   set :title, 'elBleg'
-  # set :url, 'http://elbleg.com'
+ 
+	
+	
+	set :to_html   do |path, page, ctx|                         # returns an html, from a path & context
+	  ERB.new(File.read("#{path}/#{page}.rhtml")).result(ctx)
+	end
 
+	set :error  do |code|                                    # The HTML for your error page
+	  "<font style='font-size:300%'>toto, we're not in Kansas anymore (#{code})</font>"
+	end	
  end
 
 run toto

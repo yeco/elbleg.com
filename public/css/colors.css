@@ -39,6 +39,15 @@ strong {
 	color: #FFF;
 }
 
+nav ul li{
+	background: #3C3C3C;
+	cursor:pointer;
+
+}
+nav ul li:hover{
+	background: #555;
+
+}
 .back:link,
 .back:visited {
 	color: #F90;
@@ -95,16 +104,23 @@ strong {
 	color: #828282;
 }
 
+nav a:link,
+.post a:link,
 .entry a:link,
 .comment a:link {
 	color: #F90;
 }
 
+nav a:visited,
+.post a:visited,
 .entry a:visited,
 .comment a:visited {
 	color: #F90;
 }
 
+.post a:hover,
+.post a:active,
+.post a:focus,
 .entry a:hover,
 .entry a:active,
 .entry a:focus,
@@ -143,6 +159,10 @@ strong {
 	border-top: 1px solid #2F2F2F;
 }
 
+pre, code {
+    background: #333;
+    color:#ccc;
+}
 .highlighted a:link,
 .highlighted a:visited {
 	color: #09C;
@@ -226,6 +246,7 @@ strong {
 #footer a:focus {
 	color: #FFF;
 }
+
 
 /* Text ----------------------------------------------------------------------*/
 .gist-file, .gist-data, .gist-syntax .o, .gist-syntax .ow, .gist-syntax .gs,

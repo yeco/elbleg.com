@@ -19,20 +19,36 @@
 	</title>
   </head>
   <body>
-	<div id="wrapper">
 		
 
 	<header>
-		
-		<h1>elBl&euml;g.</h1>
-		<small>en renovación.</small>
+		<a href="/">
+			<img src="/img/logo.png" width="250" height="92" alt="Logo">
+		</a>
+		<nav>
+			<ul>
+			    <li <%= ' class="active"' if @path == 'index' %>>
+			        <a href="/">Inicio</a>
+			    </li>
+			    <li <%= ' class="active"' if @path == 'archive' %>>
+			        <a href="/archives">Archivo</a>
+			    </li>
+			    <li <%= ' class="active"' if @path == 'books' %>>
+			        <a href="/about">Acerca de...</a>
+			    </li>
+			</ul>
+		</nav>
 	</header>
-    <section>
+    <section id='wrapper'>
       <%= yield %> 
-    </section>
+    </section> 
     <footer>
+	
     </footer>
-		</div>
+	
+	
+	<script src="/javascript/main.js"></script>
+
   </body>
 </html>
 
