@@ -49,6 +49,7 @@ header, footer, section, article {
 nav{
     float:right;
     top:0;
+        margin-top:-40px;
 /*    position:fixed;*/
     line-height:12px;
 }
@@ -138,6 +139,7 @@ body { font-family: 'Quattrocento Sans', sans-serif; }
 pre, code {background:#EEEEEE;}
 
 nav ul li{
+
     padding:1em;
     margin-left:0.08em;
     display:inline;
