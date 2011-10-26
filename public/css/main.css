@@ -49,6 +49,11 @@ body > header > h1 {
   margin: 100px 0 15px 0;
   font-weight: normal;
 }
+.post {
+margin: 4.6em 0;
+padding: 2.7em;
+position: relative;
+}
 .post header {
 	margin-bottom: 10px;
 }

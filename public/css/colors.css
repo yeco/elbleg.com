@@ -1,0 +1,325 @@
+/* colors.css
+
+ Greys
+ --------------------------
+ Very Dark          #2F2F2F
+ Dark               #3C3C3C
+ Regular            #828282
+ Light              #999
+ Very light         #CCC
+
+ Others
+ --------------------------
+ blue               #09C
+ yellow             #F90
+ white              #FFF
+
+*/
+
+html, body {
+	background: #2F2F2F; }
+	
+strong {
+	color: #CCC;
+}
+
+#wrapper {
+	background: #2F2F2F;
+	color: #999;
+}
+
+#header a:link,
+#header a:visited {
+	color: #09C;
+}
+
+#header a:hover,
+#header a:active,
+#header a:focus {
+	color: #FFF;
+}
+
+.back:link,
+.back:visited {
+	color: #F90;
+}
+
+.back:hover,
+.back:active,
+.back:focus {
+	color: #FFF;
+}
+
+.post {
+	background: #3C3C3C;
+}
+
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+#search h2,
+.emptysearch,
+.error {
+	color: #CCC;
+}
+
+.post h1 a:link,
+.post h1 a:visited {
+    color: #CCC;
+}
+
+.post h1 a:hover,
+.post h1 a:active,
+.post h1 a:focus {
+    color: #F90;
+}
+
+.post h2 a:link,
+.post h2 a:visited {
+    color: #CCC;
+}
+
+.post h2 a:hover,
+.post h2 a:active,
+.post h2 a:focus {
+    color: #F90;
+}
+
+.post blockquote {
+	background: #2F2F2F;
+}
+
+.date {
+	color: #828282;
+}
+
+.entry a:link,
+.comment a:link {
+	color: #F90;
+}
+
+.entry a:visited,
+.comment a:visited {
+	color: #F90;
+}
+
+.entry a:hover,
+.entry a:active,
+.entry a:focus,
+.comment a:hover,
+.comment a:active,
+.comment a:focus {
+	color: #FFF;
+}
+
+.post img {
+	border: 5px solid #FFF;
+}
+
+.post .number-of-comments a:link,
+.post .number-of-comments a:visited {
+	color: #CCC;
+}
+
+.post .number-of-comments a:hover,
+.post .number-of-comments a:active,
+.post .number-of-comments a:focus {
+	color: #F90;
+}
+
+#comments h3,
+#commentform h3 {
+	color: #CCC;
+}
+
+.comment {
+	border-top: 1px solid #3C3C3C;
+}
+
+.highlighted {
+	background: #3C3C3C;
+	border-top: 1px solid #2F2F2F;
+}
+
+.highlighted a:link,
+.highlighted a:visited {
+	color: #09C;
+}
+
+.comment cite {
+	color: #CCC;
+}
+
+.comment .moderation {
+	color: #FFF;
+}
+
+#commentform {
+	background: #3C3C3C;
+}
+
+#commentform a:link,
+#commentform a:visited {
+	color: #09C;
+}
+
+#commentform a:hover,
+#commentform a:active,
+#commentform a:focus {
+	color: #CCC;
+}
+
+.pagination {
+	color: #F90;
+}
+.pagination a:link,
+.pagination a:visited {
+	color: #F90;
+}
+
+.pagination a:hover,
+.pagination a:active,
+.pagination a:focus {
+	color: #FFF;
+}
+
+#sidebar {
+	color: #828282;
+}
+
+#sidebar a:link,
+#sidebar a:visited {
+	color: #C4C4C4;
+}
+
+#sidebar a:hover,
+#sidebar a:active,
+#sidebar a:focus {
+	color: #F90;
+}
+
+#sidebar #sb-2 a:link,
+#sidebar #sb-2 a:visited {
+	color: #C4C4C4;
+}
+
+#sidebar #sb-2 a:hover,
+#sidebar #sb-2 a:active,
+#sidebar #sb-2 a:focus {
+	color: #F90;
+}
+
+#footer {
+	border-top: 1px solid #3C3C3C;
+	color: #828282;
+}
+
+#footer a:link,
+#footer a:visited {
+	color: #09C;
+}
+
+#footer a:hover,
+#footer a:active,
+#footer a:focus {
+	color: #FFF;
+}
+
+/* Text ----------------------------------------------------------------------*/
+.gist-file, .gist-data, .gist-syntax .o, .gist-syntax .ow, .gist-syntax .gs,
+.gist-syntax .ge {
+color:#d3d7cf !important
+}
+.gist-data {
+background:#333 !important
+}
+
+/* Selection -----------------------------------------------------------------*/
+.gist-syntax .gd, .gist-syntax .gd .x {
+color: #eeeeec !important;
+background-color: #888a85 !important
+}
+
+/* Line Numbers --------------------------------------------------------------*/
+.gist-meta, .gist-meta a, .gist-meta a:visited, .gist-line-numbers {
+color:#555753 !important
+}
+.gist-meta, .gist-line-numbers {
+background:#2F2F2F !important
+}
+.gist-file {
+border:1px solid #2F2F2F !important
+}
+.gist-data {
+border-bottom:1px solid #2F2F2F !important
+}
+.gist-line-numbers {
+border-right:1px solid #2F2F2F !important
+}
+
+/* Draw Spaces ---------------------------------------------------------------*/
+.gist-syntax .w {
+color:#888a85 !important
+}
+
+/* Search Matching -----------------------------------------------------------*/
+.gist-syntax .gi, .gist-syntax .gi .x {
+color: #eeeeec !important;
+background-color: #4e9a06 !important
+}
+
+/* Comments ------------------------------------------------------------------*/
+.gist-syntax .c, .gist-syntax .c1, .gist-syntax .cm, .gist-syntax .cp,
+.gist-syntax .cs {
+color: #888a85 !important
+}
+
+/* Constant ------------------------------------------------------------------*/
+.gist-syntax .s, .gist-syntax .sb, .gist-syntax .sc, .gist-syntax .sd,
+.gist-syntax .s2, .gist-syntax .sh, .gist-syntax .si,
+.gist-syntax .sx, .gist-syntax .s1, .gist-syntax .m, .gist-syntax .mi,
+.gist-syntax .il, .gist-syntax .mf, .gist-syntax .mh, .gist-syntax .mo {
+color: #edd400 !important
+}
+
+
+/* Special Constant ----------------------------------------------------------*/
+.gist-syntax .kc, .gist-syntax .sr, .gist-syntax .ss,
+.gist-syntax .se {
+color: #ce5c00 !important
+}
+
+/* Identifier ----------------------------------------------------------------*/
+.gist-syntax .nc, .gist-syntax .ne, .gist-syntax .nf, .gist-syntax .na {
+color: #729fcf !important
+}
+
+/* Statement -----------------------------------------------------------------*/
+.gist-syntax .k, .gist-syntax .kp, .gist-syntax .kr {
+color: #ffffff !important
+}
+
+/* Type ----------------------------------------------------------------------*/
+.gist-syntax .kt, .gist-syntax .kd, .gist-syntax .nv, .gist-syntax .vc,
+.gist-syntax .vg, .gist-syntax .vi {
+color: #F90 !important
+}
+
+/* Preprocessor --------------------------------------------------------------*/
+.gist-syntax .no, .gist-syntax .nb, .gist-syntax .bp, .gist-syntax .ni,
+.gist-syntax .nn, .gist-syntax .nt, .gist-syntax .go, .gist-syntax .gp {
+color: #ad7fa8 !important
+}
+
+/* Error ---------------------------------------------------------------------*/
+.gist-syntax .gr, .gist-syntax .gt, .gist-syntax .err {
+color: #eeeeec !important;
+background-color: #cc0000 !important
+}
+
+/* Note ----------------------------------------------------------------------*/
+.gist-syntax .gh, .gist-syntax .gu {
+color: #fce94f !important
+}
