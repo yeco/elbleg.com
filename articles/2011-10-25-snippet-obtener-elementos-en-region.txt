@@ -1,6 +1,6 @@
 --- 
 title: "Snippet: Obtener elementos en region"
-date: 25/07/2011
+date: 25/10/2011
 
 <code>
 	
