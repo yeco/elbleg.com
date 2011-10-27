@@ -1,0 +1,5 @@
+--- 
+title: "Snippet: urlencode en JavaScript"
+date: 27/10/2011
+
+<script src="https://gist.github.com/1320439.js?file=urlencode.js"></script>
