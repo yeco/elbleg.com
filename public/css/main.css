@@ -140,10 +140,29 @@ body { font-family: 'Quattrocento Sans', sans-serif; }
 pre, code {background:#EEEEEE;}
 
 nav ul li{
-
+    
     padding:1em;
     margin-left:0.08em;
     display:inline;
+    position:relative;
+    
+    transition:   .25s linear;
+    -moz-transition:   .25s linear;
+    -o-transition:   .25s linear;
+    -webkit-transition:   .25s linear;
+}
+nav ul li:hover, nav ul li.active{
+    top:6px;
+    
+    
+     box-shadow: 1px 1px 2px #1F1F1F;
+    
+    
+    transition: top .25s linear;
+    -moz-transition: top .25s linear;
+    -o-transition: top .25s linear;
+    -webkit-transition: top .25s linear;
+    
 }
 #wrapper{
     margin:-7em 0;
