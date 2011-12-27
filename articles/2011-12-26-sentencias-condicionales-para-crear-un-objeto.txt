@@ -1,0 +1,21 @@
+--- 
+title: Sentencias condicionales para crear un Objeto
+date: 26/12/2011
+
+
+Me enteré de esta curiosidad. JavaScript soporta sentencias condicionales para crear un objeto si este no existe, además lo aplica a la función actual instantáneamente sin necesidad de instrucciones <em>if-else</em> y bloques enormes. Tengo la impresión de que soy el último en enterarse de esto, sin embargo me parece muy interesante y desde ya tengo varias ideas de cómo aplicarlo.
+
+Si no entendés a lo que me refiero, acá hay un ejemplo sin la sentencia condicional:
+
+<script src="https://gist.github.com/1522809.js"> </script>
+
+Y ahora con las condiciones:
+
+<script src="https://gist.github.com/1522813.js"> </script>
+
+Si querés simplificarlo más también podés hacerlo así:
+<script src="https://gist.github.com/1522819.js"> </script>
+
+Si para vos es nuevo también, espero que coloque en vos la misma sonrisa idiota que puso en mi.
+
+
