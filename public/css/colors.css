@@ -349,3 +349,9 @@ color: #fce94f !important
 .dsq-moderator {
 	background-color: #2F2F2F !important;
 }
+
+.imgbox{
+	background-color: #2F2F2F !important;
+	text-align:center;
+	padding: 20px 0px 20px 0px;
+}
