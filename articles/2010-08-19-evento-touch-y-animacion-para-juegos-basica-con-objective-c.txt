@@ -14,20 +14,20 @@ date: 19/08/2010
 <h2>Paso 1: Crea un nuevo proyecto</h2>
 <p>Abrí Xcode e inicia un nuevo proyecto, selecciona <em>“view based application”</em>, dale un nombre, yo le puse <em>“jumping”</em>, te recomiendo ponerle igual para que no te confundas luego.</p>
 <div class="imgbox">
-  <img src="http://elbleg.com/wp-content/uploads/2010/08/1-20100819-030241.jpg" />
+  <img src="/img/articles/2010-08/1-20100819-030241.jpg" />
 </div>
 <p><!-- # --></p>
 <h2>Paso 2: Importa los recursos del proyecto</h2>
 <p><strong><a href="http://elbleg.com/share/bleg_post_312.zip">Descargate este zip</a></strong>.  Ahí vas a encontrar todos las imágenes que vamos a necesitar para este proyecto, incluyendo tres sprites de Ryu de StreetFighter que me<strike> robé </strike>encontré en PanelMonkey. Vas a necesitar copiar esas imágenes al folder de recursos del proyecto arrastrándolos del finder al panel <em>“Groups &amp; Files”</em> en Xcode.</p>
-<div class="imgbox"><img src="http://elbleg.com/wp-content/uploads/2010/08/2-20100819-030147.jpg"/> </div>
+<div class="imgbox"><img src="/img/articles/2010-08/2-20100819-030147.jpg"/> </div>
 <p>Asegurate de seleccionar <em>“Copy items into destination group’s folder (if needed).”</em> cuando te salga la confirnación de Xcode.
 </p>
 <div class="imgbox">
-<img src="http://elbleg.com/wp-content/uploads/2010/08/3-20100819-030326.jpg"/>
+<img src="/img/articles/2010-08/3-20100819-030326.jpg"/>
 </div>
 <p>Todas las imagenes que necesitás deberían quedar copiadas ahora en el mismo folder que contiene el proyecto. Ahora para mantener el folder de recursos ordenado, agrupa todas las imagenes que acabas de importar. Para hacerlo solo seleccionalas, click izquierdo y selecciona <em>“group”</em> en el menú que te aparece. Podés darle un nombre a ese grupo también, yo le puse al mío el originalísimo nombre de <em>“images”</em>. </p>
 <div class="imgbox">
-<img src="http://elbleg.com/wp-content/uploads/2010/08/4-20100819-024851.jpg" />
+<img src="/img/articles/2010-08/4-20100819-024851.jpg" />
 </div>
 <p>Compila y ejecuta la aplicación tal y como está. No deben de haber errores de compilación y el simulador solo debe mostrar una pantalla gris. </p>
 <h2>Paso 3: Modifica jumpingAppDelegate.m</h2>
@@ -126,7 +126,7 @@ Nuestro querido botón debe aparecer en la pantalla una vez que la vista ha carg
 <p>Este método viene por defecto en los view controllers. Básicamente estás agregando una imagen de fondo y ejecutando el método addButton.</p>
 <p>Ok. Guarda lo que has hecho, compila y ejecuta el proyecto. Deberías ver la imagen de fondo y un botón rojo. Si tenés la consola abierta debería desplegarse un mensaje de <code>NSLog()</code> al tocar el botón.</p>
 <div class="imgbox">
-<img src="http://elbleg.com/wp-content/uploads/2010/08/5-20100819-024954.jpg"/>
+<img src="/img/articles/2010-08/5-20100819-024954.jpg"/>
 </div>
 <h2>Paso 6:  Agregando un personaje a la pantalla</h2>
 <p>Para inicializar el objeto <code>UIImageView</code>, añade lo siguiente en jumpingViewController.m antes del método addButton: </p>
@@ -168,7 +168,7 @@ Nuestro querido botón debe aparecer en la pantalla una vez que la vista ha carg
 </pre>
 <p>Compila y ejecuta. El personaje apareció en la pantalla verdád?</p>
 <div class="imgbox">
-    <img src="http://elbleg.com/wp-content/uploads/2010/08/6-20100819-025059.jpg" />
+    <img src="/img/articles/2010-08/6-20100819-025059.jpg" />
 </div>
 <h2>Paso 7: Haciendo el personaje saltar</h2>
 <p>Ahora la parte divertida. Sobre <code>addButton</code>, agregá:</p>
