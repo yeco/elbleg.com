@@ -41,33 +41,23 @@ end
 # Create and configure a toto instance
 #
 toto = Toto::Server.new do
-  #
-  # Add your settings here
-  # set [:setting], [value]
-  # 
-  set :author,    "Yëco"                               # blog author
-  # set :title,     Dir.pwd.split('/').last                   # site title
-  # set :root,      "index"                                   # page to load on /
-  # set :markdown,  :smart                                    # use markdown + smart-mode
-  # set :disqus,    false                                     # disqus id, or false
-  # set :summary,   :max => 150, :delim => /~/                # length of article summary and delimiter
-  # set :ext,       'txt'                                     # file extension for articles
-  set :cache,      28800                                    # cache duration, in seconds
 
-  set :author, "Yëco"
-  set :date, lambda {|now| now.strftime("%d %b %Y") }
-  set :summary, :max => 1000, :delim => /~\n/
-  set :disqus, 'elbleg'
-  set :title, 'elBleg'
- 
+	set :author,    "Yëco"
+	set :cache,      28800
+
+	set :author, "Yëco"
+	set :date, lambda {|now| now.strftime("%d %b %Y") }
+	set :summary, :max => 1000, :delim => /~\n/
+	set :disqus, 'elbleg'
+	set :title, 'elBleg'
+
 	
-	
-	set :to_html   do |path, page, ctx|                         # returns an html, from a path & context
+	set :to_html   do |path, page, ctx|
 	  ERB.new(File.read("#{path}/#{page}.rhtml")).result(ctx)
 	end
 
-	set :error  do |code|                                    # The HTML for your error page
-	  "<font style='font-size:300%'>toto, we're not in Kansas anymore (#{code})</font>"
+	set :error  do |code|
+	  "<font style='font-size:300%'>Error (#{code})</font>"
 	end	
  end
 
