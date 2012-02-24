@@ -18,7 +18,7 @@ date: 19/08/2010
 </div>
 <p><!-- # --></p>
 <h2>Paso 2: Importa los recursos del proyecto</h2>
-<p><strong><a href="http://elbleg.com/share/bleg_post_312.zip">Descargate este zip</a></strong>.  Ahí vas a encontrar todos las imágenes que vamos a necesitar para este proyecto, incluyendo tres sprites de Ryu de StreetFighter que me<strike> robé </strike>encontré en PanelMonkey. Vas a necesitar copiar esas imágenes al folder de recursos del proyecto arrastrándolos del finder al panel <em>“Groups &amp; Files”</em> en Xcode.</p>
+<p><strong><a href="http://dl.dropbox.com/u/846648/share/bleg_post_312.zip">Descargate este zip</a></strong>.  Ahí vas a encontrar todos las imágenes que vamos a necesitar para este proyecto, incluyendo tres sprites de Ryu de StreetFighter que me<strike> robé </strike>encontré en PanelMonkey. Vas a necesitar copiar esas imágenes al folder de recursos del proyecto arrastrándolos del finder al panel <em>“Groups &amp; Files”</em> en Xcode.</p>
 <div class="imgbox"><img src="/img/articles/2010-08/2-20100819-030147.jpg"/> </div>
 <p>Asegurate de seleccionar <em>“Copy items into destination group’s folder (if needed).”</em> cuando te salga la confirnación de Xcode.
 </p>
