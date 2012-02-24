@@ -344,3 +344,8 @@ background-color: #cc0000 !important
 .gist-syntax .gh, .gist-syntax .gu {
 color: #fce94f !important
 }
+
+
+.dsq-moderator {
+	background-color: #2F2F2F;
+}
