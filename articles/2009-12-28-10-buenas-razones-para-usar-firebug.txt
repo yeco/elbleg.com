@@ -8,9 +8,9 @@ date: 28/12/2009
             Firebug una de las herramientas que ha revolucionado la forma en que hacemos web hoy en día, su uso nos es indispensable para muchos y en lo personal es la herramienta que más utilizo para trabajar después de Textmate. </p>
 <p>La idea con este post, es recorrer diez de las mejores caracteristicas de Firebug. Así quienes no lo usan lo conocen y quienes lo conocen de repente puedan encontrarse con algo nuevo.
         </p>
-<p><span id="more-271"></span></p>
+
 <h2>
-            1. Consola<br />
+            1. Consola
         </h2>
 <p>
             La primer cosa que vas a ver cuando abrís firebug va a ser el panel de consola . Después de verlo un momento podrías darte cuenta que es una versión alternativa de la consola de errores de Firefox que básicamente nos sirve para:
@@ -170,7 +170,7 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
             Tres pasos. Empezá por llamar &#8220;console.time&#8221; y le pasás un único key. Luego de esto ponés el código que necesitás probar. Finalmente, llamás “console.timeEnd”, y de nuevo como único parámetro, le pasás el key que utilizaste anteriormente. Voilá.
         </p>
 <h2>
-            7. Reference<br />
+            7. Reference 
         </h2>
 
 
@@ -181,7 +181,7 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
             Este es un panel adicional, un add-on creado por CodeBurner. Como el nombre lo indica, con este panel tenés acceso rápido a las referencias de HTML y CSS. Me parece que el panel se explica solito.
         </p>
 <h2>
-            8. PixelPerfect<br />
+            8. PixelPerfect 
         </h2>
         <div class="imgbox"><img src="/img/articles/2009-12/pixelperfect.png" width="672" height="269" alt="Pixelperfect" />
         </div>
@@ -197,7 +197,7 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
             </li>
 </ol>
 <h2>
-            9. YSlow<br />
+            9. YSlow 
         </h2>
 <p>
             Un buen add-on creado por Yahoo!. Este te sugiere mejoras basado en una serie de test de velocidad que hace. Con YSlow, podés obtener el grado de desempeño de un website. Podés identificar fácilmente los puntos que pueden ser mejorados, además de una serie de recomendaciones para hacerlo.
@@ -210,7 +210,7 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
         <div class="imgbox"> <img src="/img/articles/2009-12/yslow2.png" width="659" height="453" alt="Yslow2" />
         </div>
 <h2>
-            10. FirePHP<br />
+            10. FirePHP
         </h2>
 <p>
             Y por último, pero no menos importante, FirePHP. Con este add-on, podés enviar información (warnings, errors, logging, info) transparentemente a la consola desde tu código PHP. Un ejemplo sería:
@@ -225,7 +225,7 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
             ?&gt;
 </code>
 <h2>
-            Conclusión<br />
+            Conclusión
         </h2>
 <p>
             Y dale con las conclusiones&#8230; Meh&#8230; Bueno ok&#8230; Va.
