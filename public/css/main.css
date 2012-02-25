@@ -167,3 +167,6 @@ nav ul li:hover, nav ul li.active{
 #wrapper{
     margin:-7em 0;
 }
+.imgbox{
+  overflow: hidden;
+}
