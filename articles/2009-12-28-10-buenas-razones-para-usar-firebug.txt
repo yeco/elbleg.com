@@ -135,7 +135,7 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
             5. DOM<br />
         </h2>
 <p>
-            Es lo mismo que HTML-&gt;DOM. Dado que nada cambia de lo que te mencioné anteriormente, pasemos a la siguiente sección.
+            Es lo mismo que HTML->DOM. Dado que nada cambia de lo que te mencioné anteriormente, pasemos a la siguiente sección.
         </p>
 <h2>
             6. Net<br />
@@ -157,7 +157,7 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
             Pruebas de desempeño (Performance Testing)<br />
         </h3>
 <p>
-            Quedés probar el desempeño de una función o un bucle específico? Podés usar el &#8220;timer&#8221; de Firebug.
+            Quedés probar el desempeño de una función o un bucle específico? Podés usar el <code>timer</code> de Firebug.
         </p>
 <code>
     function medirTiempo(){
