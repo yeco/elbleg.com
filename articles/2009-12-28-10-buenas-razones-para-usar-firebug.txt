@@ -9,9 +9,7 @@ date: 28/12/2009
 <p>La idea con este post, es recorrer diez de las mejores caracteristicas de Firebug. Así quienes no lo usan lo conocen y quienes lo conocen de repente puedan encontrarse con algo nuevo.
         </p>
 
-<h2>
-            1. Consola
-        </h2>
+<h2> 1. Consola </h2>
 <p>
             La primer cosa que vas a ver cuando abrís firebug va a ser el panel de consola . Después de verlo un momento podrías darte cuenta que es una versión alternativa de la consola de errores de Firefox que básicamente nos sirve para:
         </p>
@@ -32,7 +30,7 @@ date: 28/12/2009
 <li>Usar el objeto console para hacer output desde tu scripts
             </li>
 </ul>
-<code class="js" name="code">
+<code class="js">
     <html>
     <head>
     <script type="text/javascript"&gt;
@@ -142,7 +140,7 @@ date: 28/12/2009
             Pruebas de desempeño (Performance Testing)<br />
         </h3>
 <p>
-            Quedés probar el desempeño de una función o un bucle específico? Podés usar el <span class='code'>timer</span> de Firebug.
+            Quedés probar el desempeño de una función o un bucle específico? Podés usar el <span class='kod'>timer</span> de Firebug.
         </p>
 <code>
     function medirTiempo(){
@@ -153,7 +151,7 @@ date: 28/12/2009
         console.timeEnd("MiTimer");
     }
 </code>
-<p> Tres pasos. Empezá por llamar <span class='code'>console.time</span> y le pasás un único key. Luego de esto ponés el código que necesitás probar. Finalmente, llamás <span class='code'>console.timeEnd</span>, y de nuevo como único parámetro, le pasás el key que utilizaste anteriormente. Voilá.
+<p> Tres pasos. Empezá por llamar <span class='kod'>console.time</span> y le pasás un único key. Luego de esto ponés el código que necesitás probar. Finalmente, llamás <span class='kod'>console.timeEnd</span>, y de nuevo como único parámetro, le pasás el key que utilizaste anteriormente. Voilá.
         </p>
 <h2> 7. Reference  </h2>
 
