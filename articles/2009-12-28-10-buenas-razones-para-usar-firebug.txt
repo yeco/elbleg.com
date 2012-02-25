@@ -33,9 +33,9 @@ date: 28/12/2009
             </li>
 </ul>
 <code class="js" name="code">
-    &lt;html&gt;
-    &lt;head&gt;
-    &lt;script type="text/javascript"&gt;
+    <html>
+    <head>
+    <script type="text/javascript"&gt;
         console.time(1);
         console.log('la seccion de scripts comenzo a ejecutarse');
         console.warn('mensaje warning');
@@ -46,9 +46,9 @@ date: 28/12/2009
         'la ejecucion tardo:'
         );
         console.timeEnd(1);
-    &lt;/script&gt;
-    &lt;/head&gt;
-    &lt;/html&gt;
+    </script>
+    </head>
+    </html>
 </code>
 <p>
             Fijate en el código arriba, tiene algunos ejemplos de uso del objeto console de firebug, imaginate que abrís que ejecutás ese HTML. Eso te va a mostrar algo como esto en la consola:
@@ -65,7 +65,7 @@ date: 28/12/2009
 <li>Este botón es equivalente al &#8220;Inspect Element&#8221; que aparece en el menú contextual. Aparte de ser muy útil para seleccionar elementos en la página, también destaca el elemento seleccionado con un borde.
             </li>
 <li>En esta sección tenemos la jerarquía del elemento que tenemos seleccionado y la habilidad de efectuar una serie de acciones en cada uno de los componentes de la jerarquía como:
-<ul class="">
+<ul >
 <li>Copiar el inner HTML
                     </li>
 <li>Crear expresiones de XPath
@@ -215,14 +215,14 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
 <p>
             Y por último, pero no menos importante, FirePHP. Con este add-on, podés enviar información (warnings, errors, logging, info) transparentemente a la consola desde tu código PHP. Un ejemplo sería:
         </p>
-<code class="php" name="code">
+<code class="CodeRay">
 
-            &lt;?php
+            <?php
                 FB::log('Log message');
                 FB::info('Info message');
                 FB::warn('Warn message');
                 FB::error('Error message');
-            ?&gt;
+            ?><
 </code>
 <h2>
             Conclusión
