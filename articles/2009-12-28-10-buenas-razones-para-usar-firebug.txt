@@ -53,14 +53,14 @@ date: 28/12/2009
 <p>
             Fijate en el código arriba, tiene algunos ejemplos de uso del objeto console de firebug, imaginate que abrís que ejecutás ese HTML. Eso te va a mostrar algo como esto en la consola:
         </p>
-             <div class="imgbox"> <img src="/img/articles/2009-12/console.png" width="663" height="271" alt="Console" /></div>
+             <p class="imgbox"> <img src="/img/articles/2009-12/console.png" width="663" height="271" alt="Console" /></p>
  <h2>2. HTML</h2>
 <p>
             El segundo panel &#8211; y en el que creo que vas a pasar mucho tiempo &#8211; se divide en varias secciónes que vamos a revisar acá.
         </p>
-<div class="imgbox">        
+<p class="imgbox">        
     <img src="/img/articles/2009-12/html.png" width="664" height="272" alt="Html" />
-        </div>
+        </p>
 <ol>
 <li>Este botón es equivalente al &#8220;Inspect Element&#8221; que aparece en el menú contextual. Aparte de ser muy útil para seleccionar elementos en la página, también destaca el elemento seleccionado con un borde.
             </li>
@@ -86,12 +86,12 @@ date: 28/12/2009
             </li>
 <li>En esta sección podés examinar fácilmente el box model de un elemento: tamaño del contenido, padding, offsets, márgenes y bordes.
             </li>
-<div class="imgbox">
+<p>
                 <img src="/img/articles/2009-12/layout.png" width="655" height="245" alt="Layout" />
-                </div>
+                </p>
 <li>La sección DOM genera una lista con todos los métodos y propiedades del elemento seleccionado.
             </li>
- <div class="imgbox"><img src="/img/articles/2009-12/DOM.png" width="641" height="246" alt="DOM" /></div>
+ <p class="imgbox"><img src="/img/articles/2009-12/DOM.png" width="641" height="246" alt="DOM" /></p>
           
 </ol>
 <h2>
@@ -99,8 +99,8 @@ date: 28/12/2009
         </h2>
 <p>
             La principal diferencia entre este panel y el que está como sección dentro de la pestaña HTML es que acá podés trabajar con estilos que no han sido interpretados por el browser aún, o sea que no han sido computados. De nuevo voy a destacarte y numerar las secciones (y características esta vez). </p>
-<div class="imgbox"><img src="/img/articles/2009-12/css.png" width="700" height="273" alt="Css" />
-        </div>
+<p><img src="/img/articles/2009-12/css.png" width="700" height="273" alt="Css" />
+        </p>
 <ol>
 <li>Si la página en la que estás trabajando contiene múltiples hojas de estilo podés seleccionar solo la que te interese ver La región principal donde se muestra el código
             </li>
@@ -114,9 +114,9 @@ date: 28/12/2009
 A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La mayor parte del tiempo te vas a ver trabajando con la consola; Pero en condiciones extremas vas a tener que pasarte al script panel. Dadas esas condiciones extremas (que ocurren comúnmente), te presento este panel, así te empezás a familiarizar con él.
         </p>
 
-        <div class="imgbox">
+        <p>
             <img src="/img/articles/2009-12/script.png"  alt="Script" />
-        </div>
+        </p>
 <ol>
 <li>Un Dropdown para escoger el script que querés trabajar.
             </li>
@@ -143,8 +143,8 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
 <p>
             Curioso de cuanto tiempo tarda la página en cargar? O querés saber cual pedido tarda más tiempo en completarse? Afortunadamente, todo eso puede hacerse en el panel Net.
         </p>
-<div class="imgbox"><img src="/img/articles/2009-12/net.png" width="790" height="270" alt="Net" />
-        </div>
+<p><img src="/img/articles/2009-12/net.png" width="790" height="270" alt="Net" />
+        </p>
 <ol>
 <li>Los pedidos pueden filtrarse de acuerdo a su tipo.
             </li>
@@ -174,17 +174,15 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
         </h2>
 
 
-        <div class="imgbox">
         <img src="/img/articles/2009-12/reference.png" width="676" height="270" alt="Reference" />
-        </div>
 <p>
             Este es un panel adicional, un add-on creado por CodeBurner. Como el nombre lo indica, con este panel tenés acceso rápido a las referencias de HTML y CSS. Me parece que el panel se explica solito.
         </p>
 <h2>
             8. PixelPerfect 
         </h2>
-        <div class="imgbox"><img src="/img/articles/2009-12/pixelperfect.png" width="672" height="269" alt="Pixelperfect" />
-        </div>
+        <img src="/img/articles/2009-12/pixelperfect.png" width="672" height="269" alt="Pixelperfect" />
+
 <p>
             Si has hecho slicing de un PSD, ya sabés el tiempo que nos quita en cada elemento de la composición. Y es ahí donde PixelPerfect demuestra su poder. Este add-on te ayudará bastante en esa tediosa tarea mostrandote cómo deben ir colocados los elementos con la ayuda de imagenes superpuestas al html.
         </p>
