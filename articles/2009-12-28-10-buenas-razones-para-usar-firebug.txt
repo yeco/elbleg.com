@@ -19,21 +19,15 @@ date: 28/12/2009
 <li>Habilidad para ejecutar código JavaScript
             </li>
 </ul>
-<p>
-            Pero firebug lo extiende un poco más, así que en su consola podés hacer cosas mucho más complejas como:
-        </p>
+<p> Pero firebug lo extiende un poco más, así que en su consola podés hacer cosas mucho más complejas como:  </p>
 <ul>
-<li>Registrar errores de Javascript, CSS, XML, XMLHttpRequest (AJAX) y de Chrome (no el browser&#8230; Si no de funcionalidad interna de firefox)
-            </li>
-<li>Ejecutar JavaScript en la página web actual
-            </li>
-<li>Usar el objeto console para hacer output desde tu scripts
-            </li>
+    <li>Registrar errores de Javascript, CSS, XML, XMLHttpRequest (AJAX) y de Chrome (no el browser&#8230; Si no de funcionalidad interna de firefox) </li>
+    <li>Ejecutar JavaScript en la página web actual</li>
+    <li>Usar el objeto console para hacer output desde tu scripts</li>
 </ul>
 <code class="js">
-    <html>
-    <head>
-    <script type="text/javascript"&gt;
+
+    <script type="text/javascript">;
         console.time(1);
         console.log('la seccion de scripts comenzo a ejecutarse');
         console.warn('mensaje warning');
@@ -45,8 +39,6 @@ date: 28/12/2009
         );
         console.timeEnd(1);
     </script>
-    </head>
-    </html>
 </code>
 <p>Fijate en el código arriba, tiene algunos ejemplos de uso del objeto console de firebug, imaginate que abrís que ejecutás ese HTML. Eso te va a mostrar algo como esto en la consola:
         </p>
