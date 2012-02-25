@@ -178,42 +178,32 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
 <p>
             Este es un panel adicional, un add-on creado por CodeBurner. Como el nombre lo indica, con este panel tenés acceso rápido a las referencias de HTML y CSS. Me parece que el panel se explica solito.
         </p>
-<h2>
-            8. PixelPerfect 
-        </h2>
+<h2> 8. PixelPerfect</h2>
+
         <p class="imgbox">
-        <img src="/img/articles/2009-12/pixelperfect.png" width="672" height="269" alt="Pixelperfect" />
+            <img src="/img/articles/2009-12/pixelperfect.png" width="672" height="269" alt="Pixelperfect" />
         </p>
 <p>
             Si has hecho slicing de un PSD, ya sabés el tiempo que nos quita en cada elemento de la composición. Y es ahí donde PixelPerfect demuestra su poder. Este add-on te ayudará bastante en esa tediosa tarea mostrandote cómo deben ir colocados los elementos con la ayuda de imagenes superpuestas al html.
         </p>
-<ol>
-<li>Con este botón podés agregar varias imágenes superpuestas para la página actual.
-            </li>
-<li>Lista de superposiciones, desde acá podés agregar o quitar las imágenes.
-            </li>
-<li>Configuración de las superposiciones.
-            </li>
-</ol>
-<h2>
-            9. YSlow 
-        </h2>
-<p>
-            Un buen add-on creado por Yahoo!. Este te sugiere mejoras basado en una serie de test de velocidad que hace. Con YSlow, podés obtener el grado de desempeño de un website. Podés identificar fácilmente los puntos que pueden ser mejorados, además de una serie de recomendaciones para hacerlo.
+        <ol>
+        <li>Con este botón podés agregar varias imágenes superpuestas para la página actual.
+                    </li>
+        <li>Lista de superposiciones, desde acá podés agregar o quitar las imágenes.
+                    </li>
+        <li>Configuración de las superposiciones.
+                    </li>
+        </ol>
+<h2> 9. YSlow  </h2>
+<p>Un buen add-on creado por Yahoo!. Este te sugiere mejoras basado en una serie de test de velocidad que hace. Con YSlow, podés obtener el grado de desempeño de un website. Podés identificar fácilmente los puntos que pueden ser mejorados, además de una serie de recomendaciones para hacerlo.
         </p>
-        <p class="imgbox"> <img src="/img/articles/2009-12/yslow1.png" width="661" height="319" alt="Yslow1" />
-        </p>
-<p>
-            Aparte de las estadisticas que te muestra YSlow, te recomiendo JSLint.com para evaluar el JavaScript y Smush.it para las imágenes.
-        </p>
-        <p class="imgbox"> <img src="/img/articles/2009-12/yslow2.png" width="659" height="453" alt="Yslow2" />
-        </p>
-<h2>
-            10. FirePHP
-        </h2>
-<p>
-            Y por último, pero no menos importante, FirePHP. Con este add-on, podés enviar información (warnings, errors, logging, info) transparentemente a la consola desde tu código PHP. Un ejemplo sería:
-        </p>
+<p class="imgbox"> <img src="/img/articles/2009-12/yslow1.png" width="661" height="319" alt="Yslow1" /></p>
+<p>Aparte de las estadisticas que te muestra YSlow, te recomiendo aJSLint.com para evaluar el JavaScript y Smush.it para las imágenes.</p>
+
+<p class="imgbox"> <img src="/img/articles/2009-12/yslow2.png" width="659" height="453" alt="Yslow2" /></p>
+
+<h2>10. FirePHP </h2>
+<p> Y por último, pero no menos importante, FirePHP. Con este add-on, podés enviar información (warnings, errors, logging, info) transparentemente a la consola desde tu código PHP. Un ejemplo sería: </p>
 <code class="CodeRay">
 
             <?php
@@ -223,14 +213,9 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
                 FB::error('Error message');
             ?>
 </code>
-<h2>
-            Conclusión
-        </h2>
-<p>
-            Y dale con las conclusiones&#8230; Meh&#8230; Bueno ok&#8230; Va.
-        </p>
-<p>
-            La idea con esta pequeña lista de paneles/add-on es que se te haga la vida como developer un poco más fácil &#8212; tal como me lo ha hecho a mi.
+<h2> Conclusión </h2>
+<p> Y dale con las conclusiones&#8230; Meh&#8230; Bueno ok&#8230; Va. </p>
+<p> La idea con esta pequeña lista de paneles/add-on es que se te haga la vida como developer un poco más fácil &#8212; tal como me lo ha hecho a mi.
  </p>
 <p>Al final, los bugs siempre pasan, lo realmente malo es no estar preparado para resolverlos.</p>
 <p> Acá la lista de links para los add-ons:
