@@ -86,21 +86,15 @@ date: 28/12/2009
             </li>
 <li>En esta sección podés examinar fácilmente el box model de un elemento: tamaño del contenido, padding, offsets, márgenes y bordes.
             </li>
-<p class="imgbox">
-                <img src="/img/articles/2009-12/layout.png" width="655" height="245" alt="Layout" />
-                </p>
+<p class="imgbox">  <img src="/img/articles/2009-12/layout.png" width="655" height="245" alt="Layout" /> </p>
 <li>La sección DOM genera una lista con todos los métodos y propiedades del elemento seleccionado.
             </li>
  <p class="imgbox"><img src="/img/articles/2009-12/DOM.png" width="641" height="246" alt="DOM" /></p>
           
 </ol>
-<h2>
-            3. CSS
-        </h2>
-<p>
-            La principal diferencia entre este panel y el que está como sección dentro de la pestaña HTML es que acá podés trabajar con estilos que no han sido interpretados por el browser aún, o sea que no han sido computados. De nuevo voy a destacarte y numerar las secciones (y características esta vez). </p>
-<p class="imgbox"><img src="/img/articles/2009-12/css.png" width="700" height="273" alt="Css" />
-        </p>
+<h2> 3. CSS </h2>
+<p> La principal diferencia entre este panel y el que está como sección dentro de la pestaña HTML es que acá podés trabajar con estilos que no han sido interpretados por el browser aún, o sea que no han sido computados. De nuevo voy a destacarte y numerar las secciones (y características esta vez). </p>
+<p class="imgbox"><img src="/img/articles/2009-12/css.png" width="700" height="273" alt="Css" /></p>
 <ol>
 <li>Si la página en la que estás trabajando contiene múltiples hojas de estilo podés seleccionar solo la que te interese ver La región principal donde se muestra el código
             </li>
@@ -110,13 +104,9 @@ date: 28/12/2009
             </li>
 </ol>
 <h2>4. Script</h2>
-<p>
-A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La mayor parte del tiempo te vas a ver trabajando con la consola; Pero en condiciones extremas vas a tener que pasarte al script panel. Dadas esas condiciones extremas (que ocurren comúnmente), te presento este panel, así te empezás a familiarizar con él.
-        </p>
+<p> A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La mayor parte del tiempo te vas a ver trabajando con la consola; Pero en condiciones extremas vas a tener que pasarte al script panel. Dadas esas condiciones extremas (que ocurren comúnmente), te presento este panel, así te empezás a familiarizar con él. </p>
 
-        <p class="imgbox">
-            <img src="/img/articles/2009-12/script.png"  alt="Script" />
-        </p>
+        <p class="imgbox"> <img src="/img/articles/2009-12/script.png"  alt="Script" /> </p>
 <ol>
 <li>Un Dropdown para escoger el script que querés trabajar.
             </li>
@@ -137,9 +127,7 @@ A veces, cuando escribís JavaScript tenés que ensuciarte un poco las manos. La
 <p>
             Es lo mismo que HTML->DOM. Dado que nada cambia de lo que te mencioné anteriormente, pasemos a la siguiente sección.
         </p>
-<h2>
-            6. Net<br />
-        </h2>
+<h2> 6. Net  </h2>
 <p>
             Curioso de cuanto tiempo tarda la página en cargar? O querés saber cual pedido tarda más tiempo en completarse? Afortunadamente, todo eso puede hacerse en el panel Net.
         </p>
