@@ -11,7 +11,7 @@ use Rack::Static, :urls => ['/css', '/javascript', '/img', '/favicon.ico'], :roo
 use Rack::CommonLogger
 use Rack::Codehighlighter, 
 :coderay, :markdown => true,
-:element => "pre>code",
+:element => "code",
 :pattern => /\A:::(\w+)\s*(\n|&#x000A;)/i,
 :logging => true
 
