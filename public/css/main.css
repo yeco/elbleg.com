@@ -149,24 +149,24 @@ nav ul li{
     display:inline;
     position:relative;
     
-    transition:   .25s linear;
-    -moz-transition:   .25s linear;
-    -o-transition:   .25s linear;
-    -webkit-transition:   .25s linear;
+    transition:   .15s linear;
+    -moz-transition:   .15s linear;
+    -o-transition:   .15s linear;
+    -webkit-transition:   .15s linear;
 }
 nav ul li:hover, nav ul li.active{
     top:6px;
+    box-shadow: 1px 4px 8px #1F1F1F;
     
     
-     box-shadow: 1px 1px 2px #1F1F1F;
-    
-    
-    transition: top .25s linear;
-    -moz-transition: top .25s linear;
-    -o-transition: top .25s linear;
-    -webkit-transition: top .25s linear;
+    transition: top .15s linear;
+    -moz-transition: top .15s linear;
+    -o-transition: top .15s linear;
+    -webkit-transition: top .15s linear;
     
 }
+
+
 #wrapper{
     margin:-7em 0;
 }

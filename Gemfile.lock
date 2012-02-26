@@ -13,7 +13,7 @@ GEM
     builder (3.0.0)
     coderay (0.9.8)
     nokogiri (1.4.4)
-    rack (1.3.5)
+    rack (1.4.1)
     rack-codehighlighter (0.4.7)
       nokogiri (>= 1.4.1)
       rack (>= 1.0.0)
