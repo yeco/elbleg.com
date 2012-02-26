@@ -47,11 +47,13 @@ header, footer, section, article {
   margin-right: 30px;
 }
 nav{
-    float:right;
-    top:0;
-        margin-top:-40px;
-/*    position:fixed;*/
-    line-height:12px;
+  right: 20px;
+  top: -40px;
+  line-height: 12px;
+  position: absolute;
+}
+nav a{
+  text-decoration:none;
 }
 
 a {
@@ -109,6 +111,7 @@ body > header {
 /*  padding-top: 30px;*/
 	line-height: 180px;
 	margin-bottom: 20px;
+  position: relative;
 }
 h1, h2, h3, h4 {
   display: inline;
