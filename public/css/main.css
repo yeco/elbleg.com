@@ -52,7 +52,7 @@ nav{
   line-height: 12px;
   position: absolute;
 }
-nav a{
+nav a:hover{
   text-decoration:none;
 }
 
