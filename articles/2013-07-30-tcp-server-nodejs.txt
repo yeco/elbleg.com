@@ -14,8 +14,8 @@ Ok... explicado:
 Cómo ves, no se requiere de mucho para entender como funcionan los Streams. Ahora para hacerlo correr solo hacés lo siguiente:
 
 <ol>
-	<li>Ejecuta <code>node server.js</code> (asumiendo que nombraste el archivo así) para iniciar el server.</li>
-	<li>En otra ventana de terminal, ejecuta <code>nc localhost 1337</code> para abrir una conección al servidor.</li>
+	<li>Ejecuta <em>node server.js</em> (asumiendo que nombraste el archivo así) para iniciar el server.</li>
+	<li>En otra ventana de terminal, ejecuta <em>nc localhost 1337</em> para abrir una conección al servidor.</li>
 	<li>Repetí el paso 2 cuantas veces querás.</li>
 	<li>Escribí en una de las conneciones para verlo en las otras.</li>
 </ol>

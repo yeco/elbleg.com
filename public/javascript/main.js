@@ -17,7 +17,6 @@ bleg = {
 		}
 
 
-
 	},
 	init: function() {
 		this.navBtns();
